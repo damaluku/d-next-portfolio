@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material/styles";
 
 import Image from "next/image";
 import Link from "next/link";
+
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -50,7 +51,8 @@ export default function Home() {
               borderLeft: `4px solid ${theme.palette.primary.main}`,
             }}
           >
-            I’m Damian Aluku
+            {/* I’m Damian Aluku */}
+            Frontend Developer
           </Typography>
           <Typography
             sx={{

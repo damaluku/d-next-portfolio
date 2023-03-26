@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { Typography, Box, IconButton } from "@mui/material";
+import React from "react";
+import { Box, Tooltip } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import styled from "@emotion/styled";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import Link from "next/link";
 
 const SideBar = () => {
   const theme = useTheme();
@@ -20,16 +22,35 @@ const SideBar = () => {
           <Box
             sx={{
               background: theme.palette.primary.main,
-              width: "10px",
+              width: "6px",
               height: "100px",
               borderRadius: "9px 0px 9px 0px",
             }}
           />
-          <LinkedInIcon sx={{ fontSize: "2rem" }} />
+          <Tooltip title="Linkedin" placement="right">
+            <Link
+              href="https://www.linkedin.com/in/damian-aluku-59b06023a"
+              target="_blank"
+              rel="noopener"
+              passHref
+            >
+              <LinkedInIcon
+                sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
+              />
+            </Link>
+          </Tooltip>
+          <Tooltip title="Portfolio" placement="right">
+            <Link href="/portfolio" passHref>
+              <BusinessCenterIcon
+                sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
+              />
+            </Link>
+          </Tooltip>
+
           <Box
             sx={{
               background: theme.palette.primary.main,
-              width: "10px",
+              width: "6px",
               height: "100px",
               borderRadius: "9px 0px 9px 0px",
             }}

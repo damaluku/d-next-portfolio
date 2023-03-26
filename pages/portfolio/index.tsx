@@ -91,6 +91,20 @@ const PortfolioPage = () => {
           My Projects
         </Typography>
 
+        <Typography
+          sx={{
+            marginTop: "2rem",
+            width: {
+              xs: "100%",
+              sm: "80%",
+            },
+          }}
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ut,
+          numquam iure obcaecati in eaque voluptates iste. Modi natus ullam,
+          error doloremque id tempora quos temporibus.
+        </Typography>
+
         <Box
           sx={{
             width: "100%",

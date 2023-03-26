@@ -23,6 +23,11 @@ import Link from "next/link";
 
 import StarIcon from "@mui/icons-material/Star";
 
+import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
+import SaveIcon from "@mui/icons-material/Save";
+import PrintIcon from "@mui/icons-material/Print";
+import ShareIcon from "@mui/icons-material/Share";
+
 import { usePathname } from "next/navigation";
 
 interface Props {
@@ -107,8 +112,8 @@ const NavBar = ({ mode, setMode }: Props) => {
                   position: "absolute",
                   top: "0",
                   right: "0",
-                  width: { xs: "80vw", sm: "50vw" },
-                  height: "70vh",
+                  width: { xs: "100vw", sm: "50vw" },
+                  height: { xs: "100vh", sm: "70vh" },
                   background: myTheme.palette.primary.main,
                   borderRadius: "0 0 0 15px",
                 }}
@@ -120,6 +125,7 @@ const NavBar = ({ mode, setMode }: Props) => {
                     position: "absolute",
                     top: "20px",
                     right: "20px",
+                    zIndex: "2",
                   }}
                   onClick={() => setIsOpen(!isOpen)}
                 />
@@ -138,19 +144,15 @@ const NavBar = ({ mode, setMode }: Props) => {
                   aria-label="routes"
                 >
                   {menuItems.map((menuItem: MenuItem) => (
-                    <MenuLinks
-                      key={menuItem.id}
-                      href={menuItem.route}
-                      onClick={() => setIsOpen(!isOpen)}
-                    >
+                    <MenuLinks key={menuItem.id} href={menuItem.route}>
                       <ListItem>
                         {pathName === menuItem.route && (
                           <motion.div
                             style={{
                               position: "absolute",
-                              left: 0,
+                              left: "0%",
                               bottom: "0px",
-                              width: "60%",
+                              width: "100%",
                               height: "5px",
                               background: myTheme.palette.background.default,
                             }}
@@ -158,23 +160,36 @@ const NavBar = ({ mode, setMode }: Props) => {
                           />
                         )}
                         <ListItemButton>
-                          <ListItemIcon>
-                            <StarIcon
+                          <Box
+                            sx={{
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              width: "100%",
+                            }}
+                          >
+                            <ListItemIcon
                               sx={{
-                                color: `${
-                                  pathName === menuItem.route &&
-                                  "background.default"
-                                }`,
+                                flex: 1,
+                              }}
+                            >
+                              <StarIcon
+                                sx={{
+                                  color: `${
+                                    pathName === menuItem.route &&
+                                    "background.default"
+                                  }`,
+                                }}
+                              />
+                            </ListItemIcon>
+                            <ListItemText
+                              primary={menuItem.item}
+                              sx={{
+                                color: "background.default",
+                                textTransform: "uppercase",
                               }}
                             />
-                          </ListItemIcon>
-                          <ListItemText
-                            primary={menuItem.item}
-                            sx={{
-                              color: "background.default",
-                              textTransform: "uppercase",
-                            }}
-                          />
+                          </Box>
                         </ListItemButton>
                       </ListItem>
                     </MenuLinks>
@@ -195,7 +210,6 @@ const NavBar = ({ mode, setMode }: Props) => {
                   <Brightness4Icon />
                 )}
               </IconButton>
-
               <MenuIcon
                 sx={{
                   color: myTheme.palette.background.default,
@@ -226,16 +240,7 @@ const ActionBox = styled(Box)({
   alignItems: "center",
   width: "clamp(100px, 150px, 200px)",
   borderRadius: "15px 0 15px 0",
-});
-
-const MenuLinkContainer = styled.div({
-  width: "100%",
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-evenly",
-  alignItems: "center",
-  gap: "10px",
+  position: "relative",
 });
 
 const MenuLinks = styled(Link)({
