@@ -1,4 +1,10 @@
-import React, { useState, useMemo, ReactElement, ReactNode } from "react";
+import React, {
+  useState,
+  useMemo,
+  ReactElement,
+  ReactNode,
+  useEffect,
+} from "react";
 
 import "@/styles/globals.css";
 import { AppProps } from "next/app";
@@ -40,6 +46,13 @@ export default function MyApp(props: MyAppProps) {
     emotionCache = clientSideEmotionCache,
     pageProps: { session, ...pageProps },
   }: AppPropsWithLayout = props;
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const loader = document.getElementById("globalLoader");
+      if (loader) loader.style.display = "none";
+    }
+  }, []);
 
   const router = useRouter();
   const [mode, setMode] = useState<string>("dark");

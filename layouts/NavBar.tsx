@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Typography, Box, IconButton } from "@mui/material";
+import {
+  Typography,
+  Box,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 import Brightness4Icon from "@mui/icons-material/Brightness4";
@@ -12,6 +21,10 @@ import styled from "@emotion/styled";
 import { motion, sync, useCycle } from "framer-motion";
 import Link from "next/link";
 
+import StarIcon from "@mui/icons-material/Star";
+
+import { usePathname } from "next/navigation";
+
 interface Props {
   mode: string;
   setMode: (mode: string) => void;
@@ -20,6 +33,8 @@ interface Props {
 const NavBar = ({ mode, setMode }: Props) => {
   const myTheme = useTheme();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const pathName = usePathname();
 
   interface MenuItem {
     item: string;
@@ -95,6 +110,7 @@ const NavBar = ({ mode, setMode }: Props) => {
                   width: { xs: "80vw", sm: "50vw" },
                   height: "70vh",
                   background: myTheme.palette.primary.main,
+                  borderRadius: "0 0 0 15px",
                 }}
               >
                 <CloseIcon
@@ -108,21 +124,62 @@ const NavBar = ({ mode, setMode }: Props) => {
                   onClick={() => setIsOpen(!isOpen)}
                 />
 
-                <MenuLinkContainer>
+                <List
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    bgcolor: "primary",
+                    position: "relative",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-evenly",
+                    gap: "5px",
+                  }}
+                  aria-label="routes"
+                >
                   {menuItems.map((menuItem: MenuItem) => (
                     <MenuLinks
                       key={menuItem.id}
                       href={menuItem.route}
                       onClick={() => setIsOpen(!isOpen)}
                     >
-                      <Typography
-                        sx={{ color: myTheme.palette.background.default }}
-                      >
-                        {menuItem.item}
-                      </Typography>
+                      <ListItem>
+                        {pathName === menuItem.route && (
+                          <motion.div
+                            style={{
+                              position: "absolute",
+                              left: 0,
+                              bottom: "0px",
+                              width: "60%",
+                              height: "5px",
+                              background: myTheme.palette.background.default,
+                            }}
+                            layoutId="underline"
+                          />
+                        )}
+                        <ListItemButton>
+                          <ListItemIcon>
+                            <StarIcon
+                              sx={{
+                                color: `${
+                                  pathName === menuItem.route &&
+                                  "background.default"
+                                }`,
+                              }}
+                            />
+                          </ListItemIcon>
+                          <ListItemText
+                            primary={menuItem.item}
+                            sx={{
+                              color: "background.default",
+                              textTransform: "uppercase",
+                            }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
                     </MenuLinks>
                   ))}
-                </MenuLinkContainer>
+                </List>
               </Box>
             </Box>
           ) : (
@@ -190,6 +247,7 @@ const MenuLinks = styled(Link)({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  position: "relative",
 
   p: {
     fontSize: "clamp(1rem, 1.5rem, 2rem)",
