@@ -13,6 +13,21 @@ const lightThemeOptions: ThemeOptions = {
       main: "#1a1aff",
     },
   },
+  typography: {
+    fontFamily: [
+      "sans-serif",
+      "Cormorant",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
 };
 
 export default lightThemeOptions;

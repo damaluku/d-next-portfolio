@@ -1,16 +1,10 @@
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-
-import { Typography, Box, IconButton, Button, Stack } from "@mui/material";
-import styled from "@emotion/styled";
+import { Typography, Box, Button, Stack } from "@mui/material";
 
 import { useTheme } from "@mui/material/styles";
 
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const theme = useTheme();
@@ -104,7 +98,7 @@ export default function Home() {
           },
         }}
       >
-        <Image src="/home-bg.jpg" alt="home image" fill />
+        <Image src="/home-bg.jpg" alt="home image" fill priority />
       </Box>
     </Box>
   );

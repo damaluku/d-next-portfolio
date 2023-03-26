@@ -23,6 +23,13 @@ import CLearLayout from "@/layouts/CLearLayout";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
+import { Inter } from "@next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const clientSideEmotionCache = createEmotionCache();
 
 interface MyAppProps extends AppProps {

@@ -74,7 +74,7 @@ const AboutPage = () => {
         width: "100%",
         flex: "1",
         padding: {
-          xs: "8rem 1rem",
+          xs: "8rem 0.5rem",
           sm: "8rem 2rem",
         },
         position: "relative",
