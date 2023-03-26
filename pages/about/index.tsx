@@ -71,9 +71,10 @@ const AboutPage = () => {
           xs: "80vh",
           sm: "100%",
         },
+        width: "100%",
         flex: "1",
         padding: {
-          xs: "2rem 2rem",
+          xs: "8rem 1rem",
           sm: "8rem 2rem",
         },
         position: "relative",
@@ -96,7 +97,7 @@ const AboutPage = () => {
 
       <Grid
         container
-        spacing={12}
+        rowSpacing={12}
         sx={{
           width: "100%",
           marginTop: {
