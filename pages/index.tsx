@@ -51,8 +51,8 @@ export default function Home() {
               borderLeft: `4px solid ${theme.palette.primary.main}`,
             }}
           >
-            {/* I’m Damian Aluku */}
-            Frontend Developer
+            I’m Damian Aluku
+            {/* Frontend Developer */}
           </Typography>
           <Typography
             sx={{

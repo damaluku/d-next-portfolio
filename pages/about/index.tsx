@@ -103,6 +103,10 @@ const AboutPage = () => {
           marginTop: {
             md: "2rem",
           },
+          paddingX: {
+            xs: "1rem",
+            sm: "0",
+          },
         }}
       >
         <Grid item xs={12}>
