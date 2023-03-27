@@ -10,12 +10,7 @@ import "@/styles/globals.css";
 import { AppProps } from "next/app";
 import type { NextPage } from "next";
 
-import {
-  ThemeProvider,
-  CssBaseline,
-  createTheme,
-  duration,
-} from "@mui/material";
+import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 
 import createEmotionCache from "@/utils/theme/createEmotionCache";
@@ -27,8 +22,9 @@ import BaseLayout from "@/layouts/BaseLayout";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useRouter } from "next/router";
+import ClearLayout from "@/layouts/ClearLayout";
 
-import ClearLayout from "../layouts/ClearLayout";
+// import ClearLayout from "../layouts/ClearLayout";
 
 const clientSideEmotionCache = createEmotionCache();
 

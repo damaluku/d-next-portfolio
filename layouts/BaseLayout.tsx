@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
-import { Fragment } from "react";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 type Props = {
   children: React.ReactNode;
@@ -15,7 +14,6 @@ type Props = {
 const BaseLayout: React.FC<Props> = ({ children, mode, setMode }) => {
   return (
     <>
-      {/* <AnimatePresence mode="wait"> */}
       <motion.div
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -33,11 +31,6 @@ const BaseLayout: React.FC<Props> = ({ children, mode, setMode }) => {
                 xs: "1/1/10/10",
                 sm: "1/2/10/10",
               },
-
-              /*  paddingTop: {
-              xs: "5rem",
-              sm: "0px",
-            }, */
             }}
           >
             {children}
@@ -45,7 +38,6 @@ const BaseLayout: React.FC<Props> = ({ children, mode, setMode }) => {
           <SideBar />
         </MainContainer>
       </motion.div>
-      {/* </AnimatePresence> */}
     </>
   );
 };
