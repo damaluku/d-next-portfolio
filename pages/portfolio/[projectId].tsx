@@ -15,7 +15,7 @@ import Link from "next/link";
 
 type Data = {
   id: string;
-  // name?: string;
+  name: string;
   description: string;
   imgUrl: string;
   image: string;
@@ -119,8 +119,7 @@ const Project: React.FC<Props> = ({ data }) => {
               <Box justifyContent="center" alignItems="center">
                 <Image
                   src={data.image}
-                  // alt={data.name}
-                  alt="image "
+                  alt={data.name}
                   width="350"
                   height="400"
                 />
@@ -178,12 +177,21 @@ export const getStaticProps = async (context: any) => {
 
   const data = getProjectById(projectId);
 
-  return {
-    props: {
-      data,
-    },
-    revalidate: 30,
-  };
+  if (data) {
+    return {
+      props: {
+        data,
+      },
+      revalidate: 30,
+    };
+  } else {
+    return {
+      props: {
+        data: [],
+      },
+      revalidate: 30,
+    };
+  }
 };
 
 export const getStaticPaths = async () => {
