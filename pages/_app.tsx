@@ -28,7 +28,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useRouter } from "next/router";
 
-import ClearLayout from "@/layouts/ClearLayout";
+import ClearLayout from "../layouts/ClearLayout";
 
 const clientSideEmotionCache = createEmotionCache();
 
