@@ -18,9 +18,9 @@ const SideBar = () => {
           display: {
             xs: "none",
             sm: "block",
-            position: "fixed",
-            left: "41px",
-            top: "35%",
+            // position: "fixed",
+            // left: "41px",
+            // top: "35%",
           },
         }}
       >

@@ -18,7 +18,6 @@ import lightThemeOptions from "@/utils/theme/lightThemeOptions";
 import darkThemeOptions from "@/utils/theme/darkThemeOptions";
 
 import BaseLayout from "@/layouts/BaseLayout";
-// import ClearLayout from "@/layouts/ClearLayout";
 import PlainLayout from "@/layouts/PlainLayout";
 
 import { AnimatePresence, motion } from "framer-motion";

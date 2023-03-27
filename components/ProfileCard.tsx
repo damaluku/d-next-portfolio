@@ -28,7 +28,10 @@ const ProfileCard = ({ project }: Props) => {
   }, []);
 
   return (
-    <Card sx={{ maxWidth: 345, justifySelf: "center" }} data-aos="flip-left">
+    <Card
+      sx={{ maxWidth: 345, justifySelf: "center" }}
+      data-aos="fade-up-right"
+    >
       <CardContent
         sx={{
           height: "200px",

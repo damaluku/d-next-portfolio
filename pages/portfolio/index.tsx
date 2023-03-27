@@ -43,22 +43,6 @@ const PortfolioPage = () => {
         "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
       image: "/home-bg.jpg",
     },
-    {
-      id: 4,
-      title: "Project 4",
-      route: "/",
-      description:
-        "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-      image: "/home-bg.jpg",
-    },
-    {
-      id: 5,
-      title: "Project 5",
-      route: "/",
-      description:
-        "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-      image: "/home-bg.jpg",
-    },
   ];
 
   return (
