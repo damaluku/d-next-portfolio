@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "darkflix",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "imgUrl": "https://",
+    "image": "/home-bg.jpg",
+    "route": "",
+    "stack": ["html", "css", "js"]
+  },
+  {
+    "id": "2",
+    "name": "vassel",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "imgUrl": "https://",
+    "image": "/home-bg.jpg",
+    "route": "",
+    "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
+  },
+  {
+    "id": "3",
+    "name": "destate",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "imgUrl": "https://",
+    "image": "/home-bg.jpg",
+    "route": "",
+    "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
+  },
+  {
+    "id": "4",
+    "name": "D-Gallery",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "imgUrl": "https://",
+    "image": "/home-bg.jpg",
+    "route": "",
+    "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
+  }
+]

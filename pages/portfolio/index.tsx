@@ -6,44 +6,24 @@ import { useTheme } from "@mui/material/styles";
 import ProfileCard from "@/components/ProfileCard";
 
 import { motion } from "framer-motion";
+import { getProjects } from "../api/projects";
 
-const PortfolioPage = () => {
+type Data = {
+  id: string;
+  name: string;
+  description: string;
+  imgUrl: string;
+  image: string;
+  route: string;
+  stack: string[];
+};
+
+interface Props {
+  data: Data[];
+}
+
+const PortfolioPage: React.FC<Props> = ({ data }) => {
   const theme = useTheme();
-
-  interface MyProjects {
-    id: number;
-    title: string;
-    route: string;
-    description: string;
-    image: string;
-  }
-
-  const myProjects: MyProjects[] = [
-    {
-      id: 1,
-      title: "Project 1",
-      route: "/",
-      description:
-        "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-      image: "/home-bg.jpg",
-    },
-    {
-      id: 2,
-      title: "Project 2",
-      route: "/",
-      description:
-        "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-      image: "/home-bg.jpg",
-    },
-    {
-      id: 3,
-      title: "Project 3",
-      route: "/",
-      description:
-        "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-      image: "/home-bg.jpg",
-    },
-  ];
 
   return (
     <>
@@ -56,7 +36,7 @@ const PortfolioPage = () => {
           width: "100%",
           flex: "1",
           padding: {
-            xs: "8rem 0.5rem",
+            xs: "8rem 1rem 3rem",
             sm: "8rem 2rem",
           },
           position: "relative",
@@ -116,7 +96,7 @@ const PortfolioPage = () => {
             alignItems: "center",
           }}
         >
-          {myProjects.map((project) => (
+          {data.map((project) => (
             <ProfileCard key={project.id} project={project} />
           ))}
         </Box>
@@ -126,3 +106,13 @@ const PortfolioPage = () => {
 };
 
 export default PortfolioPage;
+
+export async function getStaticProps() {
+  const data = await getProjects();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
