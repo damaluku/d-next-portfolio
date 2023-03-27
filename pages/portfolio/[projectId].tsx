@@ -4,7 +4,6 @@ import { Typography, Stack, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { getProjectById } from "../api/projects/[projectId]";
-import allData from "@/pages/api/data.json";
 
 import { motion } from "framer-motion";
 
@@ -58,7 +57,7 @@ const Project: React.FC<Props> = ({ data }) => {
             textTransform: "uppercase",
           }}
         >
-          {data.name ? data.name : ""}
+          {data.name}
         </Typography>
       </motion.div>
 
