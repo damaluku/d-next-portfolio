@@ -58,8 +58,7 @@ const Project: React.FC<Props> = ({ data }) => {
             textTransform: "uppercase",
           }}
         >
-          {/* {data.name} */}
-          name
+          {data.name}
         </Typography>
       </motion.div>
 
@@ -187,7 +186,17 @@ export const getStaticProps = async (context: any) => {
   } else {
     return {
       props: {
-        data: [],
+        data: [
+          {
+            id: "string",
+            name: "string",
+            description: "string",
+            imgUrl: "string",
+            image: "string",
+            route: "string",
+            stack: [],
+          },
+        ],
       },
       revalidate: 30,
     };
