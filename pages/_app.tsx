@@ -18,11 +18,12 @@ import lightThemeOptions from "@/utils/theme/lightThemeOptions";
 import darkThemeOptions from "@/utils/theme/darkThemeOptions";
 
 import BaseLayout from "@/layouts/BaseLayout";
+// import ClearLayout from "@/layouts/ClearLayout";
+import PlainLayout from "@/layouts/PlainLayout";
 
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useRouter } from "next/router";
-import ClearLayout from "@/layouts/ClearLayout";
 
 // import ClearLayout from "../layouts/ClearLayout";
 
@@ -71,9 +72,9 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <ThemeProvider theme={selectedTheme}>
           <CssBaseline />
-          <ClearLayout>
+          <PlainLayout>
             <Component {...pageProps} />
-          </ClearLayout>
+          </PlainLayout>
         </ThemeProvider>
       </CacheProvider>
     );
