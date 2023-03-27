@@ -170,36 +170,15 @@ const Project: React.FC<Props> = ({ data }) => {
 
 export default Project;
 
-export const getStaticProps = async (context: any) => {
+export const getServerSideProps = async (context: any) => {
   const { params } = context;
   const { projectId } = params;
 
-  const data = allData.find((p) => p.id == projectId);
+  const data = await getProjectById(projectId);
 
-  if (data) {
-    return {
-      props: {
-        data,
-      },
-      revalidate: 30,
-    };
-  } else {
-    return {
-      props: {
-        data: [],
-      },
-      revalidate: 30,
-    };
-  }
-};
-
-export const getStaticPaths = async () => {
   return {
-    paths: [
-      { params: { projectId: "1" } },
-      { params: { projectId: "2" } },
-      { params: { projectId: "3" } },
-    ],
-    fallback: true,
+    props: {
+      data,
+    },
   };
 };
