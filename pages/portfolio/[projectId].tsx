@@ -4,6 +4,7 @@ import { Typography, Stack, Divider, Grid } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { getProjectById } from "../api/projects/[projectId]";
+import allData from "@/pages/api/data.json";
 
 import { motion } from "framer-motion";
 
@@ -26,7 +27,8 @@ interface Props {
   data: Data;
 }
 
-const Project: React.FC<Props> = ({ data }) => {
+// const Project: React.FC<Props> = ({ data }) => {
+const Project = ({ data }: any) => {
   const theme = useTheme();
 
   return (
@@ -133,7 +135,7 @@ const Project: React.FC<Props> = ({ data }) => {
               transition={{ duration: 0.3, delay: 1.2 }}
             >
               <Grid container gap={3}>
-                {data.stack.map((item, i) => (
+                {data.stack.map((item: any, i: string) => (
                   <Grid key={i} spacing={3}>
                     <Button variant="contained" disabled>
                       {item}
