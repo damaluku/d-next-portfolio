@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import {
   Divider,
   Grid,
@@ -13,8 +13,17 @@ import List from "@mui/material/List";
 import { useTheme } from "@mui/material/styles";
 import ServiceList from "@/components/ServiceList";
 
+import { motion } from "framer-motion";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const AboutPage = () => {
   const theme = useTheme();
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   type MyStack = {
     id: number;
@@ -80,20 +89,27 @@ const AboutPage = () => {
         position: "relative",
       }}
     >
-      <Typography
-        variant="h2"
-        component="h2"
-        sx={{
-          borderBottom: `1px solid ${theme.palette.primary.main}`,
-          paddingBottom: "1rem",
-          width: {
-            xs: "100%",
-            sm: "80%",
-          },
-        }}
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 0.3 }}
       >
-        About Me
-      </Typography>
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{
+            borderBottom: `1px solid ${theme.palette.primary.main}`,
+            paddingBottom: "1rem",
+            width: {
+              xs: "100%",
+              sm: "80%",
+            },
+          }}
+        >
+          About Me
+        </Typography>
+      </motion.div>
 
       <Grid
         container
@@ -116,22 +132,45 @@ const AboutPage = () => {
             spacing={5}
           >
             <Box sx={{ flex: "1", display: { xs: "none", md: "block" } }}>
-              <Typography variant="h4">A bit about myself</Typography>
+              {" "}
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
+              >
+                <Typography variant="h4">A bit about myself</Typography>
+              </motion.div>
             </Box>
             <Box sx={{ flex: "2" }}>
-              <Typography>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Similique, numquam. Libero esse earum in tenetur molestiae
-                fugiat ipsum expedita eum? Nam exercitationem pariatur inventore
-                ipsa recusandae accusamus, similique, doloribus cupiditate modi
-                alias ipsum corrupti ad sunt! Natus explicabo excepturi quo!
-              </Typography>
+              <motion.div
+                initial={{ y: 10, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
+              >
+                <Typography>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Similique, numquam. Libero esse earum in tenetur molestiae
+                  fugiat ipsum expedita eum? Nam exercitationem pariatur
+                  inventore ipsa recusandae accusamus, similique, doloribus
+                  cupiditate modi alias ipsum corrupti ad sunt! Natus explicabo
+                  excepturi quo!
+                </Typography>
+              </motion.div>
             </Box>
           </Stack>
         </Grid>
         <Grid item xs={12}>
-          <Box sx={{}}>
-            <Typography variant="h4">My tech stack</Typography>
+          <Box>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.3, delay: 0.9 }}
+            >
+              <Typography variant="h4">My tech stack</Typography>
+            </motion.div>
           </Box>
         </Grid>
 
@@ -142,6 +181,7 @@ const AboutPage = () => {
               alignItems="center"
               justifyContent="space-between"
               gap={1}
+              data-aos="fade-up"
             >
               <Typography sx={{ textTransform: "uppercase" }}>
                 {item.title}
@@ -162,7 +202,7 @@ const AboutPage = () => {
             divider={<Divider orientation="vertical" flexItem />}
             spacing={5}
           >
-            <Box sx={{ flex: "1" }}>
+            <Box sx={{ flex: "1" }} data-aos="fade-up">
               <Typography variant="h4">My Services</Typography>
             </Box>
             <Box sx={{ flex: "2" }}>

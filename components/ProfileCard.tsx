@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -6,6 +6,9 @@ import { Button, CardActions } from "@mui/material";
 import Link from "next/link";
 
 import Image from "next/image";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 interface Project {
   id: number;
@@ -20,8 +23,12 @@ type Props = {
 };
 
 const ProfileCard = ({ project }: Props) => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <Card sx={{ maxWidth: 345, justifySelf: "center" }}>
+    <Card sx={{ maxWidth: 345, justifySelf: "center" }} data-aos="flip-left">
       <CardContent
         sx={{
           height: "200px",

@@ -44,40 +44,73 @@ export default function Home() {
             transform: "translateX(-50%) translateY(-50%)",
           }}
         >
-          <Typography
-            variant="h3"
-            sx={{
-              paddingLeft: "2rem",
-              borderLeft: `4px solid ${theme.palette.primary.main}`,
-            }}
+          <motion.div
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -10, opacity: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            I’m Damian Aluku
-            {/* Frontend Developer */}
-          </Typography>
-          <Typography
-            sx={{
-              margin: "2rem 0",
-            }}
+            <Typography
+              variant="h3"
+              sx={{
+                paddingLeft: "2rem",
+                borderLeft: `4px solid ${theme.palette.primary.main}`,
+              }}
+            >
+              I’m Damian Aluku
+              {/* Frontend Developer */}
+            </Typography>
+          </motion.div>
+
+          <motion.div
+            initial={{ x: 10, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -10, opacity: 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-            praesentium nihil cum tenetur, eius asperiores quae officia quisquam
-            laudantium enim id provident alias harum sapiente expedita inventore
-            illum? Dolorem magnam iste beatae id minus natus inventore sapiente,
-            esse molestiae amet.
-          </Typography>
+            <Typography
+              sx={{
+                margin: "2rem 0",
+              }}
+            >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
+              praesentium nihil cum tenetur, eius asperiores quae officia
+              quisquam laudantium enim id provident alias harum sapiente
+              expedita inventore illum? Dolorem magnam iste beatae id minus
+              natus inventore sapiente, esse molestiae amet.
+            </Typography>
+          </motion.div>
 
           <Stack direction="row" spacing={5}>
-            <Link href="/portfolio" passHref style={{ textDecoration: "none" }}>
-              <Button variant="contained" size="medium" color="primary">
-                my portfolio
-              </Button>
-            </Link>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.3, delay: 0.6 }}
+            >
+              <Link
+                href="/portfolio"
+                passHref
+                style={{ textDecoration: "none" }}
+              >
+                <Button variant="contained" size="medium" color="primary">
+                  my portfolio
+                </Button>
+              </Link>
+            </motion.div>
 
-            <Link href="/contact" passHref style={{ textDecoration: "none" }}>
-              <Button variant="contained" size="medium" color="primary">
-                Contact
-              </Button>
-            </Link>
+            <motion.div
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -10, opacity: 0 }}
+              transition={{ duration: 0.3, delay: 0.9 }}
+            >
+              <Link href="/contact" passHref style={{ textDecoration: "none" }}>
+                <Button variant="contained" size="medium" color="primary">
+                  Contact
+                </Button>
+              </Link>
+            </motion.div>
           </Stack>
         </Box>
       </Box>

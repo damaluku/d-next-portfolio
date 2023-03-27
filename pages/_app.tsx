@@ -10,7 +10,12 @@ import "@/styles/globals.css";
 import { AppProps } from "next/app";
 import type { NextPage } from "next";
 
-import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
+import {
+  ThemeProvider,
+  CssBaseline,
+  createTheme,
+  duration,
+} from "@mui/material";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 
 import createEmotionCache from "@/utils/theme/createEmotionCache";
@@ -18,17 +23,12 @@ import lightThemeOptions from "@/utils/theme/lightThemeOptions";
 import darkThemeOptions from "@/utils/theme/darkThemeOptions";
 
 import BaseLayout from "@/layouts/BaseLayout";
-import CLearLayout from "@/layouts/CLearLayout";
 
 import { AnimatePresence, motion } from "framer-motion";
+
 import { useRouter } from "next/router";
 
-import { Inter } from "@next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
+import ClearLayout from "@/layouts/CLearLayout";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -75,9 +75,9 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <ThemeProvider theme={selectedTheme}>
           <CssBaseline />
-          <CLearLayout>
+          <ClearLayout>
             <Component {...pageProps} />
-          </CLearLayout>
+          </ClearLayout>
         </ThemeProvider>
       </CacheProvider>
     );
@@ -87,9 +87,32 @@ export default function MyApp(props: MyAppProps) {
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={selectedTheme}>
         <CssBaseline />
-        <BaseLayout mode={mode} setMode={setMode}>
-          <Component {...pageProps} />
-        </BaseLayout>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={router.route}
+            transition={{
+              duration: 0,
+            }}
+            initial="initialState"
+            animate="animatedState"
+            exit="exitState"
+            variants={{
+              initialState: {
+                opacity: 0,
+                height: 0,
+              },
+              animatedState: {
+                opacity: 1,
+                height: "100%",
+              },
+              exitState: { opacity: 0, height: "100%" },
+            }}
+          >
+            <BaseLayout mode={mode} setMode={setMode}>
+              <Component {...pageProps} />
+            </BaseLayout>
+          </motion.div>
+        </AnimatePresence>
       </ThemeProvider>
     </CacheProvider>
   );

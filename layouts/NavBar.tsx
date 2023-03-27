@@ -23,11 +23,6 @@ import Link from "next/link";
 
 import StarIcon from "@mui/icons-material/Star";
 
-import FileCopyIcon from "@mui/icons-material/FileCopyOutlined";
-import SaveIcon from "@mui/icons-material/Save";
-import PrintIcon from "@mui/icons-material/Print";
-import ShareIcon from "@mui/icons-material/Share";
-
 import { usePathname } from "next/navigation";
 
 interface Props {
@@ -167,6 +162,7 @@ const NavBar = ({ mode, setMode }: Props) => {
                               alignItems: "center",
                               width: "100%",
                             }}
+                            onClick={() => setIsOpen(!isOpen)}
                           >
                             <ListItemIcon
                               sx={{

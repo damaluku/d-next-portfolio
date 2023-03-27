@@ -7,6 +7,8 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import { useTheme } from "@mui/material/styles";
 
+import { motion } from "framer-motion";
+
 import Link from "next/link";
 
 const ContactPage = () => {
@@ -49,20 +51,27 @@ const ContactPage = () => {
         position: "relative",
       }}
     >
-      <Typography
-        variant="h2"
-        component="h2"
-        sx={{
-          borderBottom: `1px solid ${theme.palette.primary.main}`,
-          paddingBottom: "1rem",
-          width: {
-            xs: "100%",
-            sm: "80%",
-          },
-        }}
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 0.3 }}
       >
-        Contact Me
-      </Typography>
+        <Typography
+          variant="h2"
+          component="h2"
+          sx={{
+            borderBottom: `1px solid ${theme.palette.primary.main}`,
+            paddingBottom: "1rem",
+            width: {
+              xs: "100%",
+              sm: "80%",
+            },
+          }}
+        >
+          Contact Me
+        </Typography>
+      </motion.div>
 
       <Grid
         container
@@ -87,66 +96,104 @@ const ContactPage = () => {
             spacing={5}
           >
             <Stack sx={{ flex: "1" }} spacing={4}>
-              <Typography
-                variant="h4"
-                sx={{
-                  textTransform: "capitalize",
-                  a: {
-                    color: theme.palette.primary.main,
-                    textDecoration: "none",
-                  },
-                }}
+              <motion.div
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
               >
-                Get in touch
-              </Typography>
-              <Typography
-                sx={{
-                  textTransform: "capitalize",
-                  a: {
-                    color: theme.palette.primary.main,
-                    textDecoration: "none",
-                  },
-                }}
+                <Typography
+                  variant="h4"
+                  sx={{
+                    textTransform: "capitalize",
+                    a: {
+                      color: theme.palette.primary.main,
+                      textDecoration: "none",
+                    },
+                  }}
+                >
+                  Get in touch
+                </Typography>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.6 }}
               >
-                Email :{" "}
-                <a href="mailto:damaluku@gmail.com">damaluku@gmail.com</a>
-              </Typography>
-              <Typography
-                sx={{
-                  textTransform: "capitalize",
-                  a: {
-                    color: theme.palette.primary.main,
-                    textDecoration: "none",
-                  },
-                }}
+                <Typography
+                  sx={{
+                    textTransform: "capitalize",
+                    a: {
+                      color: theme.palette.primary.main,
+                      textDecoration: "none",
+                    },
+                  }}
+                >
+                  Email :{" "}
+                  <a href="mailto:damaluku@gmail.com">damaluku@gmail.com</a>
+                </Typography>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 0.9 }}
               >
-                Tel : <a href="tel:+2348184094047">+2348184094047</a>
-              </Typography>
-              <Typography
-                sx={{
-                  textTransform: "capitalize",
-                  a: {
-                    color: theme.palette.primary.main,
-                    textDecoration: "none",
-                  },
-                }}
+                <Typography
+                  sx={{
+                    textTransform: "capitalize",
+                    a: {
+                      color: theme.palette.primary.main,
+                      textDecoration: "none",
+                    },
+                  }}
+                >
+                  Tel : <a href="tel:+2348184094047">+2348184094047</a>
+                </Typography>
+              </motion.div>
+
+              <motion.div
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -10, opacity: 0 }}
+                transition={{ duration: 0.3, delay: 1.2 }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                rerum unde mollitia, officia repudiandae similique quis.
-              </Typography>
+                <Typography
+                  sx={{
+                    textTransform: "capitalize",
+                    a: {
+                      color: theme.palette.primary.main,
+                      textDecoration: "none",
+                    },
+                  }}
+                >
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                  rerum unde mollitia, officia repudiandae similique quis.
+                </Typography>
+              </motion.div>
             </Stack>
             <Grid container sx={{ flex: "1" }} spacing={6}>
               {socials.map((item) => (
                 <Grid item xs={6} key={item.id}>
-                  <Link
-                    href={item.route}
-                    style={{ textDecoration: "none" }}
-                    passHref
-                    target="_blank"
-                    rel="noopener"
+                  <motion.div
+                    initial={{ y: 10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.3, delay: 1.5 }}
                   >
-                    {item.icon}
-                  </Link>
+                    <Link
+                      href={item.route}
+                      style={{ textDecoration: "none" }}
+                      passHref
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {item.icon}
+                    </Link>
+                  </motion.div>
                 </Grid>
               ))}
             </Grid>

@@ -2,7 +2,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const CLearLayout: React.FC<Props> = ({ children }) => {
+const ClearLayout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <main>{children}</main>
@@ -10,4 +10,4 @@ const CLearLayout: React.FC<Props> = ({ children }) => {
   );
 };
 
-export default CLearLayout;
+export default ClearLayout;

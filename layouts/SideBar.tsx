@@ -15,7 +15,13 @@ const SideBar = () => {
     <Container>
       <Box
         sx={{
-          display: { xs: "none", sm: "block" },
+          display: {
+            xs: "none",
+            sm: "block",
+            position: "fixed",
+            left: "41px",
+            top: "35%",
+          },
         }}
       >
         <StrokeContainer>

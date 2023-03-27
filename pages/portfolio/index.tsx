@@ -1,9 +1,11 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { useTheme } from "@mui/material/styles";
 import ProfileCard from "@/components/ProfileCard";
+
+import { motion } from "framer-motion";
 
 const PortfolioPage = () => {
   const theme = useTheme();
@@ -76,34 +78,48 @@ const PortfolioPage = () => {
           position: "relative",
         }}
       >
-        <Typography
-          variant="h2"
-          component="h2"
-          sx={{
-            borderBottom: `1px solid ${theme.palette.primary.main}`,
-            paddingBottom: "1rem",
-            width: {
-              xs: "100%",
-              sm: "80%",
-            },
-          }}
+        <motion.div
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -10, opacity: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          My Projects
-        </Typography>
+          <Typography
+            variant="h2"
+            component="h2"
+            sx={{
+              borderBottom: `1px solid ${theme.palette.primary.main}`,
+              paddingBottom: "1rem",
+              width: {
+                xs: "100%",
+                sm: "80%",
+              },
+            }}
+          >
+            My Projects
+          </Typography>
+        </motion.div>
 
-        <Typography
-          sx={{
-            marginTop: "2rem",
-            width: {
-              xs: "100%",
-              sm: "80%",
-            },
-          }}
+        <motion.div
+          initial={{ x: 10, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: -10, opacity: 0 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ut,
-          numquam iure obcaecati in eaque voluptates iste. Modi natus ullam,
-          error doloremque id tempora quos temporibus.
-        </Typography>
+          <Typography
+            sx={{
+              marginTop: "2rem",
+              width: {
+                xs: "100%",
+                sm: "80%",
+              },
+            }}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ut,
+            numquam iure obcaecati in eaque voluptates iste. Modi natus ullam,
+            error doloremque id tempora quos temporibus.
+          </Typography>
+        </motion.div>
 
         <Box
           sx={{

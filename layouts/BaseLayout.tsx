@@ -4,6 +4,8 @@ import { Fragment } from "react";
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 
+import { motion, AnimatePresence } from "framer-motion";
+
 type Props = {
   children: React.ReactNode;
   mode: string;
@@ -13,28 +15,37 @@ type Props = {
 const BaseLayout: React.FC<Props> = ({ children, mode, setMode }) => {
   return (
     <>
-      <MainContainer>
-        <NavBar mode={mode} setMode={setMode} />
-        <Box
-          className="children-container"
-          sx={{
-            minHeight: "40vh",
-            width: "100%",
-            gridArea: {
-              xs: "1/1/10/10",
-              sm: "1/2/10/10",
-            },
+      {/* <AnimatePresence mode="wait"> */}
+      <motion.div
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -10, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+      >
+        <MainContainer>
+          <NavBar mode={mode} setMode={setMode} />
+          <Box
+            className="children-container"
+            sx={{
+              minHeight: "40vh",
+              width: "100%",
+              gridArea: {
+                xs: "1/1/10/10",
+                sm: "1/2/10/10",
+              },
 
-            /*  paddingTop: {
+              /*  paddingTop: {
               xs: "5rem",
               sm: "0px",
             }, */
-          }}
-        >
-          {children}
-        </Box>
-        <SideBar />
-      </MainContainer>
+            }}
+          >
+            {children}
+          </Box>
+          <SideBar />
+        </MainContainer>
+      </motion.div>
+      {/* </AnimatePresence> */}
     </>
   );
 };
