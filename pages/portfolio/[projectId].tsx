@@ -15,7 +15,7 @@ import Link from "next/link";
 
 type Data = {
   id: string;
-  name: string;
+  // name?: string;
   description: string;
   imgUrl: string;
   image: string;
@@ -27,8 +27,7 @@ interface Props {
   data: Data;
 }
 
-// const Project: React.FC<Props> = ({ data }) => {
-const Project = ({ data }: any) => {
+const Project: React.FC<Props> = ({ data }) => {
   const theme = useTheme();
 
   return (
@@ -59,7 +58,8 @@ const Project = ({ data }: any) => {
             textTransform: "uppercase",
           }}
         >
-          {data.name}
+          {/* {data.name} */}
+          name
         </Typography>
       </motion.div>
 
@@ -119,7 +119,8 @@ const Project = ({ data }: any) => {
               <Box justifyContent="center" alignItems="center">
                 <Image
                   src={data.image}
-                  alt={data.name}
+                  // alt={data.name}
+                  alt="image "
                   width="350"
                   height="400"
                 />
@@ -135,7 +136,7 @@ const Project = ({ data }: any) => {
               transition={{ duration: 0.3, delay: 1.2 }}
             >
               <Grid container gap={3}>
-                {data.stack.map((item: any, i: string) => (
+                {data.stack.map((item, i) => (
                   <Grid key={i} spacing={3}>
                     <Button variant="contained" disabled>
                       {item}
