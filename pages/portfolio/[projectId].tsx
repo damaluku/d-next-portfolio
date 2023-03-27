@@ -58,7 +58,7 @@ const Project: React.FC<Props> = ({ data }) => {
             textTransform: "uppercase",
           }}
         >
-          {data.name}
+          {data.name ? data.name : ""}
         </Typography>
       </motion.div>
 
@@ -174,7 +174,7 @@ export const getStaticProps = async (context: any) => {
   const { params } = context;
   const { projectId } = params;
 
-  const data = getProjectById(projectId);
+  const data = await getProjectById(projectId);
 
   if (data) {
     return {
@@ -186,17 +186,7 @@ export const getStaticProps = async (context: any) => {
   } else {
     return {
       props: {
-        data: [
-          {
-            id: "string",
-            name: "string",
-            description: "string",
-            imgUrl: "string",
-            image: "string",
-            route: "string",
-            stack: [],
-          },
-        ],
+        data: [],
       },
       revalidate: 30,
     };
