@@ -28,7 +28,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useRouter } from "next/router";
 
-import ClearLayout from "@/layouts/CLearLayout";
+import ClearLayout from "@/layouts/ClearLayout";
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -91,7 +91,7 @@ export default function MyApp(props: MyAppProps) {
           <motion.div
             key={router.route}
             transition={{
-              duration: 0,
+              duration: 0.5,
             }}
             initial="initialState"
             animate="animatedState"
@@ -99,13 +99,15 @@ export default function MyApp(props: MyAppProps) {
             variants={{
               initialState: {
                 opacity: 0,
-                height: 0,
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
               },
               animatedState: {
                 opacity: 1,
-                height: "100%",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
               },
-              exitState: { opacity: 0, height: "100%" },
+              exitState: {
+                clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+              },
             }}
           >
             <BaseLayout mode={mode} setMode={setMode}>
