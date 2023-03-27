@@ -173,7 +173,7 @@ export const getStaticProps = async (context: any) => {
   const { params } = context;
   const { projectId } = params;
 
-  const data = await getProjectById(projectId);
+  const data = getProjectById(projectId);
 
   return {
     props: {
