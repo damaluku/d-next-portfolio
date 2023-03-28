@@ -10,6 +10,7 @@ import { getProjects } from "../api/projects";
 
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import Link from "next/link";
+import { handleDownload } from "@/utils/helpers";
 
 type Data = {
   id: string;
@@ -27,19 +28,6 @@ interface Props {
 
 const PortfolioPage: React.FC<Props> = ({ data }) => {
   const theme = useTheme();
-
-  const handleDownload = () => {
-    fetch("MyResume.pdf").then((res) => {
-      res.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob);
-
-        let alink = document.createElement("a");
-        alink.href = fileURL;
-        alink.download = "MyResume.pdf";
-        alink.click();
-      });
-    });
-  };
 
   return (
     <>
@@ -101,7 +89,8 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
             tools to aid other developers in their endeavors. Here are a few
             projects which include this{" "}
             <Link
-              href="/"
+              href="https://github.com/damaluku/d-next-portfolio"
+              target="_blank"
               style={{
                 textDecoration: "none",
               }}

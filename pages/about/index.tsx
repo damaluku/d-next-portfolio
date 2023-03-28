@@ -5,6 +5,7 @@ import {
   Typography,
   Stack,
   LinearProgress,
+  Button,
 } from "@mui/material";
 import { Box } from "@mui/system";
 
@@ -15,8 +16,11 @@ import ServiceList from "@/components/ServiceList";
 
 import { motion } from "framer-motion";
 
+import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
+
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { handleDownload } from "@/utils/helpers";
 
 const AboutPage = () => {
   const theme = useTheme();
@@ -233,6 +237,21 @@ const AboutPage = () => {
           </Stack> */}
         </Grid>
       </Grid>
+
+      <Box>
+        <Button
+          variant="contained"
+          startIcon={<DownloadForOfflineIcon />}
+          onClick={handleDownload}
+          sx={{
+            position: "absolute",
+            right: "1.5rem",
+            bottom: "2rem",
+          }}
+        >
+          Resume
+        </Button>
+      </Box>
     </Box>
   );
 };
