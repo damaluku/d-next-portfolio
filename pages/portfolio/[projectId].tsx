@@ -87,6 +87,7 @@ const Project: React.FC<Props> = ({ data }) => {
                 sm: "80%",
               },
             }}
+            lineHeight={2}
           >
             {data.description}
           </Typography>

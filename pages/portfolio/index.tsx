@@ -93,6 +93,7 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
                 sm: "80%",
               },
             }}
+            lineHeight={2}
           >
             I&apos;ve worked on a number of projects intended to provide me a
             comprehensive understanding of the subject of development as well as

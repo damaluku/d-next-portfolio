@@ -149,7 +149,7 @@ const AboutPage = () => {
                 exit={{ x: -10, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.6 }}
               >
-                <Typography>
+                <Typography lineHeight={2}>
                   A frontend developer. I enjoy working on the internet and
                   ensuring that it remains a space for all of us to pursue our
                   quirky, individual, and creative interests. In order to
@@ -159,6 +159,10 @@ const AboutPage = () => {
                   experimenting with the internet as a creative tool. This
                   portfolio is constantly evolving in an effort to learn and
                   apply web technology in novel ways.
+                  <br />
+                  I&apos;m open to Job opportunities where I can contribute,
+                  learn and grow. If you have a good opportunity that matches my
+                  skills and experience then don&apos;t hesitate to contact me.
                 </Typography>
               </motion.div>
             </Box>
@@ -200,7 +204,7 @@ const AboutPage = () => {
         ))}
 
         <Grid item xs={12}>
-          <Stack
+          {/* <Stack
             direction={{ xs: "column", md: "row" }}
             divider={<Divider orientation="vertical" flexItem />}
             spacing={5}
@@ -227,7 +231,7 @@ const AboutPage = () => {
                 ))}
               </List>
             </Box>
-          </Stack>
+          </Stack> */}
         </Grid>
       </Grid>
     </Box>

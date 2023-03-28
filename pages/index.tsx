@@ -74,6 +74,7 @@ export default function Home() {
               sx={{
                 margin: "2rem 0",
               }}
+              lineHeight={2}
             >
               I&apos;m a front-end developer based in Nigeria with a passion for
               building beautiful websites and web applications. My style is more
@@ -132,7 +133,7 @@ export default function Home() {
       >
         <Box
           sx={{
-            zIndex: 10,
+            zIndex: 1,
             position: "absolute",
             bottom: "2rem",
             display: {
