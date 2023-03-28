@@ -134,9 +134,9 @@ const AboutPage = () => {
             <Box sx={{ flex: "1", display: { xs: "none", md: "block" } }}>
               {" "}
               <motion.div
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
+                initial={{ x: -10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 10, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.3 }}
               >
                 <Typography variant="h4">A bit about myself</Typography>
@@ -144,9 +144,9 @@ const AboutPage = () => {
             </Box>
             <Box sx={{ flex: "2" }}>
               <motion.div
-                initial={{ y: 10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -10, opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.6 }}
               >
                 <Typography>
@@ -164,9 +164,9 @@ const AboutPage = () => {
         <Grid item xs={12}>
           <Box>
             <motion.div
-              initial={{ y: 10, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -10, opacity: 0 }}
+              initial={{ x: -10, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 10, opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.9 }}
             >
               <Typography variant="h4">My tech stack</Typography>

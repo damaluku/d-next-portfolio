@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { useTheme } from "@mui/material/styles";
@@ -7,6 +7,8 @@ import ProfileCard from "@/components/ProfileCard";
 
 import { motion } from "framer-motion";
 import { getProjects } from "../api/projects";
+
+import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 
 type Data = {
   id: string;
@@ -25,6 +27,19 @@ interface Props {
 const PortfolioPage: React.FC<Props> = ({ data }) => {
   const theme = useTheme();
 
+  const handleDownload = () => {
+    fetch("MyResume.pdf").then((res) => {
+      res.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob);
+
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "MyResume.pdf";
+        alink.click();
+      });
+    });
+  };
+
   return (
     <>
       <Box
@@ -36,7 +51,7 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
           width: "100%",
           flex: "1",
           padding: {
-            xs: "8rem 1rem 3rem",
+            xs: "8rem 1rem 8rem",
             sm: "8rem 2rem",
           },
           position: "relative",
@@ -99,6 +114,21 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
           {data.map((project) => (
             <ProfileCard key={project.id} project={project} />
           ))}
+        </Box>
+
+        <Box>
+          <Button
+            variant="contained"
+            startIcon={<DownloadForOfflineIcon />}
+            onClick={handleDownload}
+            sx={{
+              position: "absolute",
+              right: "1.5rem",
+              bottom: "2rem",
+            }}
+          >
+            Resume
+          </Button>
         </Box>
       </Box>
     </>
