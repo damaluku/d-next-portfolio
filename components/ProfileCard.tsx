@@ -55,7 +55,7 @@ const ProfileCard = ({ project }: Props) => {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {project.description.length > 160
-            ? `${project.description.slice(1, 160)}...`
+            ? `${project.description.slice(0, 160)}...`
             : project.description}
         </Typography>
       </CardContent>

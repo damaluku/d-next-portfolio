@@ -78,7 +78,7 @@ export default function Home() {
             >
               I&apos;m a front-end developer based in Nigeria with a passion for
               building beautiful websites and web applications. My style is more
-              graphic, minimalist, and focused on achieving high performance
+              minimalist, efficient, and focused on achieving high quality
               projects.
             </Typography>
           </motion.div>

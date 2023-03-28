@@ -16,7 +16,8 @@
       "nextjs",
       "Redux Toolkit",
       "nextUi",
-      "NextAuth"
+      "NextAuth",
+      "chatgpt"
     ]
   },
   {
@@ -26,7 +27,17 @@
     "imgUrl": "https://",
     "image": "/dee-blog.jpg",
     "route": "https://dee-sanity-blog.vercel.app/",
-    "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
+    "stack": [
+      "html",
+      "css",
+      "js",
+      "ts",
+      "git",
+      "github",
+      "Mui",
+      "nextjs",
+      "sanity studios"
+    ]
   },
   {
     "id": "3",

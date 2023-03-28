@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { getProjects } from "../api/projects";
 
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
+import Link from "next/link";
 
 type Data = {
   id: string;
@@ -98,7 +99,22 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
             I&apos;ve worked on a number of projects intended to provide me a
             comprehensive understanding of the subject of development as well as
             tools to aid other developers in their endeavors. Here are a few
-            examples that include this portfolio.
+            projects which include this{" "}
+            <Link
+              href="/"
+              style={{
+                textDecoration: "none",
+              }}
+            >
+              {" "}
+              <Typography
+                component="span"
+                sx={{ color: "primary.main", fontWeight: "bold" }}
+              >
+                <i>my portfolio site</i>
+              </Typography>
+            </Link>{" "}
+            built with NEXTJS.
           </Typography>
         </motion.div>
 
