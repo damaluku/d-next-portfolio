@@ -161,8 +161,7 @@ const AboutPage = () => {
                   apply web technology in novel ways.
                   <br />
                   I&apos;m open to Job opportunities where I can contribute,
-                  learn and grow. If you have a good opportunity that matches my
-                  skills and experience then don&apos;t hesitate to contact me.
+                  learn and grow.
                 </Typography>
               </motion.div>
             </Box>
