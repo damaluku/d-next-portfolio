@@ -7,6 +7,8 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+
 export default function Home() {
   const theme = useTheme();
   return (
@@ -22,6 +24,7 @@ export default function Home() {
       }}
     >
       <Box
+        id="content"
         sx={{
           minHeight: {
             xs: "80vh",
@@ -57,8 +60,7 @@ export default function Home() {
                 borderLeft: `4px solid ${theme.palette.primary.main}`,
               }}
             >
-              I’m Damian Aluku
-              {/* Frontend Developer */}
+              I&apos;m Damian Aluku
             </Typography>
           </motion.div>
 
@@ -73,11 +75,10 @@ export default function Home() {
                 margin: "2rem 0",
               }}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-              praesentium nihil cum tenetur, eius asperiores quae officia
-              quisquam laudantium enim id provident alias harum sapiente
-              expedita inventore illum? Dolorem magnam iste beatae id minus
-              natus inventore sapiente, esse molestiae amet.
+              I&apos;m a front-end developer based in Nigeria with a passion for
+              building beautiful websites and web applications. My style is more
+              graphic, minimalist, and focused on achieving high performance
+              projects.
             </Typography>
           </motion.div>
 
@@ -88,13 +89,9 @@ export default function Home() {
               exit={{ y: -10, opacity: 0 }}
               transition={{ duration: 0.3, delay: 0.6 }}
             >
-              <Link
-                href="/portfolio"
-                passHref
-                style={{ textDecoration: "none" }}
-              >
+              <Link href="/about" passHref style={{ textDecoration: "none" }}>
                 <Button variant="contained" size="medium" color="primary">
-                  my portfolio
+                  About me
                 </Button>
               </Link>
             </motion.div>
@@ -133,6 +130,33 @@ export default function Home() {
           },
         }}
       >
+        <Box
+          sx={{
+            zIndex: 10,
+            position: "absolute",
+            bottom: "2rem",
+            display: {
+              xs: "flex",
+              sm: "none",
+            },
+            justifyContent: "center",
+            width: "100%",
+          }}
+        >
+          <motion.span
+            initial={{ translateY: 0, scale: 1 }}
+            animate={{ translateY: 20, scale: 1.5 }}
+            exit={{ translateY: 0, scale: 1 }}
+            transition={{ duration: 1.5 }}
+          >
+            <a href="#content">
+              <ArrowDropDownIcon
+                fontSize="large"
+                sx={{ color: "white", cursor: "pointer" }}
+              />
+            </a>
+          </motion.span>
+        </Box>
         <Image src="/home-bg.jpg" alt="home image" fill priority />
       </Box>
     </Box>

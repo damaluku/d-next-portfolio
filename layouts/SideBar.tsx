@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+
 import Link from "next/link";
 
 const SideBar = () => {
@@ -18,9 +19,6 @@ const SideBar = () => {
           display: {
             xs: "none",
             sm: "block",
-            // position: "fixed",
-            // left: "41px",
-            // top: "35%",
           },
         }}
       >

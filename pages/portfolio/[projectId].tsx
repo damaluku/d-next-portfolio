@@ -120,6 +120,7 @@ const Project: React.FC<Props> = ({ data }) => {
                   alt={data.name}
                   width="350"
                   height="400"
+                  quality={100}
                 />
               </Box>
             </motion.div>

@@ -94,9 +94,10 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
               },
             }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ut,
-            numquam iure obcaecati in eaque voluptates iste. Modi natus ullam,
-            error doloremque id tempora quos temporibus.
+            I&apos;ve worked on a number of projects intended to provide me a
+            comprehensive understanding of the subject of development as well as
+            tools to aid other developers in their endeavors. Here are a few
+            examples that include this portfolio.
           </Typography>
         </motion.div>
 

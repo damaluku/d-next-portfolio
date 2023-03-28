@@ -150,12 +150,15 @@ const AboutPage = () => {
                 transition={{ duration: 0.3, delay: 0.6 }}
               >
                 <Typography>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Similique, numquam. Libero esse earum in tenetur molestiae
-                  fugiat ipsum expedita eum? Nam exercitationem pariatur
-                  inventore ipsa recusandae accusamus, similique, doloribus
-                  cupiditate modi alias ipsum corrupti ad sunt! Natus explicabo
-                  excepturi quo!
+                  A frontend developer. I enjoy working on the internet and
+                  ensuring that it remains a space for all of us to pursue our
+                  quirky, individual, and creative interests. In order to
+                  achieve this, I&apos;ve created a number of projects designed
+                  to provide me a broad grasp of the development field as well
+                  as tools to help other developers along their path. I enjoy
+                  experimenting with the internet as a creative tool. This
+                  portfolio is constantly evolving in an effort to learn and
+                  apply web technology in novel ways.
                 </Typography>
               </motion.div>
             </Box>

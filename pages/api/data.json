@@ -1,38 +1,49 @@
 [
   {
     "id": "1",
-    "name": "darkflix",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "name": "Q-Base",
+    "description": "I created the multipage website Q-Base to help developers identify tools to increase development quality and speed. In order to get inspiration for creating a nice user interface, I visited several sorts of websites in the same business as well as online communities like Dribbble.",
     "imgUrl": "https://",
-    "image": "/home-bg.jpg",
-    "route": "",
-    "stack": ["html", "css", "js"]
+    "image": "/q-base.jpg",
+    "route": "https://quick-base.netlify.app/",
+    "stack": [
+      "html",
+      "css",
+      "js",
+      "ts",
+      "git",
+      "github",
+      "nextjs",
+      "Redux Toolkit",
+      "nextUi",
+      "NextAuth"
+    ]
   },
   {
     "id": "2",
-    "name": "vassel",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "name": "DEE BLOG",
+    "description": "I created the multipage blog site Dee Blog with an enjoyable user experience in mind. I got inspiration for creating a nice user interface by browsing many types of websites within the same business, including websites like awwwards.",
     "imgUrl": "https://",
-    "image": "/home-bg.jpg",
-    "route": "",
+    "image": "/dee-blog.jpg",
+    "route": "https://dee-sanity-blog.vercel.app/",
     "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
   },
   {
     "id": "3",
-    "name": "destate",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
+    "name": "Darkflix",
+    "description": "I chose to redesign the frontend of the official Netflix Web App because I was drawn to its attractive user interface. By doing so, I had the chance to demonstrate my frontend expertise, and it turned out to be a wonderful learning experience. In order to construct a user interface that is responsive to all types of devices and uses the SPA framework to speed up the frontend, I used my frontend development tools.",
     "imgUrl": "https://",
-    "image": "/home-bg.jpg",
-    "route": "",
-    "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
-  },
-  {
-    "id": "4",
-    "name": "D-Gallery",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quisquam sed blanditiis exercitationem adipisci voluptatem voluptas dolores totam eaque consequuntur quas repellendus fugit quis reprehenderit dicta velit quo minus numquam.",
-    "imgUrl": "https://",
-    "image": "/home-bg.jpg",
-    "route": "",
-    "stack": ["html", "css", "js", "ts", "git", "github", "reactjs"]
+    "image": "/darkflix.jpg",
+    "route": "https://dam-darkflix.netlify.app/",
+    "stack": [
+      "html",
+      "css",
+      "js",
+      "git",
+      "github",
+      "reactjs",
+      "react redux",
+      "styled-components"
+    ]
   }
 ]
