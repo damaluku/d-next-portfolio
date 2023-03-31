@@ -23,6 +23,7 @@ import PlainLayout from "@/layouts/PlainLayout";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 // import ClearLayout from "../layouts/ClearLayout";
 
@@ -80,38 +81,55 @@ export default function MyApp(props: MyAppProps) {
   }
 
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={selectedTheme}>
-        <CssBaseline />
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={router.route}
-            transition={{
-              duration: 0.5,
-            }}
-            initial="initialState"
-            animate="animatedState"
-            exit="exitState"
-            variants={{
-              initialState: {
-                opacity: 0,
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-              },
-              animatedState: {
-                opacity: 1,
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-              },
-              exitState: {
-                clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
-              },
-            }}
-          >
-            <BaseLayout mode={mode} setMode={setMode}>
-              <Component {...pageProps} />
-            </BaseLayout>
-          </motion.div>
-        </AnimatePresence>
-      </ThemeProvider>
-    </CacheProvider>
+    <>
+      <Head>
+        <title>Damian Aluku {router.pathname}</title>
+        <meta name="title" content="Damian Aluku" />
+        <meta
+          name="description"
+          content="This is a portfolio website for Damian Aluku, a front-end developer with experience in ReactJS, NextJS, and various front-end technologies."
+        />
+        <meta
+          name="keywords"
+          content="React, ReactJS, NextJS, TypeScript, Frontend Developer, Javascript, HTML, CSS, Software engineer, Vue, Material UI, NextUI, Styled-components, development"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+      </Head>
+      <CacheProvider value={emotionCache}>
+        <ThemeProvider theme={selectedTheme}>
+          <CssBaseline />
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={router.route}
+              transition={{
+                duration: 0.5,
+              }}
+              initial="initialState"
+              animate="animatedState"
+              exit="exitState"
+              variants={{
+                initialState: {
+                  opacity: 0,
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                },
+                animatedState: {
+                  opacity: 1,
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+                },
+                exitState: {
+                  clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+                },
+              }}
+            >
+              <BaseLayout mode={mode} setMode={setMode}>
+                <Component {...pageProps} />
+              </BaseLayout>
+            </motion.div>
+          </AnimatePresence>
+        </ThemeProvider>
+      </CacheProvider>
+    </>
   );
 }
