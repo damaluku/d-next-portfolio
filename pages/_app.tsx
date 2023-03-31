@@ -83,7 +83,9 @@ export default function MyApp(props: MyAppProps) {
   return (
     <>
       <Head>
-        <title>Damian Aluku {router.pathname}</title>
+        <title>
+          Damian Aluku {router.pathname == "/" ? "" : router.pathname}
+        </title>
         <meta name="title" content="Damian Aluku" />
         <meta
           name="description"
