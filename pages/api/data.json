@@ -2,7 +2,7 @@
   {
     "id": "1",
     "name": "Q-Base",
-    "description": "I created the multipage website Q-Base to help developers identify tools to increase development quality and speed. In order to get inspiration for creating a nice user interface, I visited several sorts of websites in the same business as well as online communities like Dribbble.",
+    "description": "I created the library website called Q-Base to help developers identify tools to increase development quality and speed. In order to get inspiration for creating a nice user interface, I visited several sorts of websites in the same business as well as online communities like Dribbble. I also added an AI search feature using ChatGPT to make the user experience more enjoyable.",
     "imgUrl": "https://",
     "image": "/q-base.jpg",
     "route": "https://quick-base.netlify.app/",

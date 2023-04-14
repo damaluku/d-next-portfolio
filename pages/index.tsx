@@ -8,6 +8,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import HomeParticles from "@/components/Particles";
 
 export default function Home() {
   const theme = useTheme();
@@ -159,6 +160,17 @@ export default function Home() {
           </motion.span>
         </Box>
         <Image src="/home-bg.jpg" alt="home image" fill priority />
+
+        <Box
+        /*  sx={{
+            display: {
+              xs: "none",
+              sm: "block",
+            },
+          }} */
+        >
+          <HomeParticles />
+        </Box>
       </Box>
     </Box>
   );
