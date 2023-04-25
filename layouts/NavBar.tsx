@@ -25,6 +25,8 @@ import StarIcon from "@mui/icons-material/Star";
 
 import { usePathname } from "next/navigation";
 
+import { useRouter } from "next/router";
+
 interface Props {
   mode: string;
   setMode: (mode: string) => void;
@@ -32,6 +34,8 @@ interface Props {
 
 const NavBar = ({ mode, setMode }: Props) => {
   const myTheme = useTheme();
+  const router = useRouter();
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const pathName = usePathname();
@@ -75,7 +79,7 @@ const NavBar = ({ mode, setMode }: Props) => {
                 variant="h3"
                 component="h3"
                 sx={{ textTransform: "uppercase" }}
-                color="primary"
+                color={router.route === "/" ? "white" : "primary"}
               >
                 D.A
               </Typography>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 
 import { useTheme } from "@mui/material/styles";
@@ -8,9 +8,9 @@ import ProfileCard from "@/components/ProfileCard";
 import { motion } from "framer-motion";
 import { getProjects } from "../api/projects";
 
-import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import Link from "next/link";
-import { handleDownload } from "@/utils/helpers";
+
+import ResumeComp from "@/components/ResumeComp";
 
 type Data = {
   id: string;
@@ -124,18 +124,7 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
         </Box>
 
         <Box>
-          <Button
-            variant="contained"
-            startIcon={<DownloadForOfflineIcon />}
-            onClick={handleDownload}
-            sx={{
-              position: "absolute",
-              right: "1.5rem",
-              bottom: "2rem",
-            }}
-          >
-            Resume
-          </Button>
+          <ResumeComp />
         </Box>
       </Box>
     </>
