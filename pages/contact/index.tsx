@@ -163,15 +163,17 @@ const ContactPage = () => {
               >
                 <Typography
                   sx={{
-                    textTransform: "capitalize",
+                    textTransform: "",
                     a: {
                       color: theme.palette.primary.main,
                       textDecoration: "none",
                     },
                   }}
                 >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                  rerum unde mollitia, officia repudiandae similique quis.
+                  Freelance and fulltime opportunities, especially those
+                  involving ambitious or sizable tasks, fascinate me. Please get
+                  in touch with me if you have any further requests or
+                  inquirues.
                 </Typography>
               </motion.div>
             </Stack>
