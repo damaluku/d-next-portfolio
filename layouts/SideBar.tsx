@@ -18,7 +18,7 @@ const SideBar = () => {
         sx={{
           display: {
             xs: "none",
-            sm: "block",
+            md: "block",
           },
           position: "fixed",
           top: "25%",
