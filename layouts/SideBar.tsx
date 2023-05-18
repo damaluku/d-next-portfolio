@@ -20,6 +20,9 @@ const SideBar = () => {
             xs: "none",
             sm: "block",
           },
+          position: "fixed",
+          top: "25%",
+          left: "2%",
         }}
       >
         <StrokeContainer>

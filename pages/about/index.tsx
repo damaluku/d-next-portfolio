@@ -42,7 +42,7 @@ const AboutPage = () => {
     { id: 6, title: "VueJs", percentage: 83 },
     { id: 7, title: "NuxtJS", percentage: 85 },
     { id: 8, title: "TypeScript", percentage: 85 },
-    { id: 9, title: "Styled-components", percentage: 92 },
+    { id: 9, title: "Styled_components", percentage: 92 },
     { id: 10, title: "Bootstrap", percentage: 83 },
     { id: 11, title: "MUI", percentage: 82 },
     { id: 12, title: "NextUI", percentage: 88 },
@@ -182,27 +182,32 @@ const AboutPage = () => {
           </Box>
         </Grid>
 
-        {myStack.map((item) => (
-          <Grid item xs={12} md={6} key={item.id}>
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="space-between"
-              gap={1}
-              data-aos="fade-up"
-            >
-              <Typography sx={{ textTransform: "uppercase" }}>
-                {item.title}
-              </Typography>
-              <Box sx={{ width: "100%" }}>
-                <LinearProgress variant="determinate" value={item.percentage} />
-              </Box>
-              <Typography sx={{ textTransform: "uppercase" }}>
-                {item.percentage}%
-              </Typography>
-            </Stack>
-          </Grid>
-        ))}
+        <Grid container gap={8} marginTop={5} justifyContent="center">
+          {myStack.map((item) => (
+            <Grid item xs={12} lg={6} key={item.id}>
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="space-between"
+                gap={1}
+                data-aos="fade-up"
+              >
+                <Typography sx={{ textTransform: "uppercase" }}>
+                  {item.title}
+                </Typography>
+                <Box sx={{ width: "100%" }}>
+                  <LinearProgress
+                    variant="determinate"
+                    value={item.percentage}
+                  />
+                </Box>
+                <Typography sx={{ textTransform: "uppercase" }}>
+                  {item.percentage}%
+                </Typography>
+              </Stack>
+            </Grid>
+          ))}
+        </Grid>
 
         <Grid item xs={12}>
           {/* <Stack
