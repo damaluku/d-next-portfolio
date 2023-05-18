@@ -22,6 +22,9 @@ export default function Home() {
           xs: "column-reverse",
           sm: "row",
         },
+        "@media (orientation: landscape)": {
+          margin: "6rem 0",
+        },
       }}
     >
       <Box
@@ -113,6 +116,7 @@ export default function Home() {
           </Stack>
         </Box>
       </Box>
+
       <Box
         sx={{
           position: "relative",
@@ -161,14 +165,7 @@ export default function Home() {
         </Box>
         <Image src="/home-bg.jpg" alt="home image" fill priority />
 
-        <Box
-        /*  sx={{
-            display: {
-              xs: "none",
-              sm: "block",
-            },
-          }} */
-        >
+        <Box>
           <HomeParticles />
         </Box>
       </Box>
