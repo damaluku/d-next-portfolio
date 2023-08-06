@@ -174,9 +174,9 @@ const Project: React.FC<Props> = ({ data }) => {
             </Link>
 
             {data?.github.length > 0 && (
-              <Link href={data?.github} target="_blank" rel="noopener" passHref>
+              <a href={data?.github} target="_blank" rel="noopener">
                 <Button variant="contained">View Repo</Button>
-              </Link>
+              </a>
             )}
           </Stack>
         </motion.div>
