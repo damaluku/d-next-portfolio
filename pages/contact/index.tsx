@@ -206,7 +206,11 @@ const ContactPage = () => {
                   transition={{ duration: 0.3, delay: 1.5 }}
                 >
                   <Link
-                    href={item.route}
+                    href={
+                      item.name === "Email"
+                        ? "mailto:damaluku@gmail.com"
+                        : item.route
+                    }
                     style={{ textDecoration: "none" }}
                     passHref
                     target="_blank"

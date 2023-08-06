@@ -234,7 +234,7 @@ const AboutPage = () => {
                 transition={{ duration: 0.3, delay: 0.6 }}
               >
                 <Typography lineHeight={2}>
-                  A frontend developer. I enjoy working on the internet and
+                  As a frontend developer, I enjoy working on the internet and
                   ensuring that it remains a space for all of us to pursue our
                   quirky, individual, and creative interests. In order to
                   achieve this, I&apos;ve created a number of projects designed

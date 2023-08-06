@@ -1,21 +1,27 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import data from "@/db/data.json";
+import { ProjectData } from ".";
 
-export function getProjectById(projectId: any) {
+export async function getProjectById(projectId: any) {
   const project = data.find((item) => item.id === projectId);
   return project;
 }
 
-export default function handler(
+interface RespTypes {
+  message?: string;
+  project?: ProjectData | undefined;
+}
+
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<any>
+  res: NextApiResponse<RespTypes>
 ) {
   if (req.method !== "GET") {
     res.setHeader("Allow", ["GET"]);
     res.status(405).json({ message: `Method ${req.method} is not allowed` });
   } else {
-    const project = getProjectById(req.query.category);
-    res.status(200).json(project);
+    const project = await getProjectById(req.query.category);
+    res.status(200).json({ project });
   }
 }

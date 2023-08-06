@@ -6,24 +6,14 @@ import { useTheme } from "@mui/material/styles";
 import ProfileCard from "@/components/ProfileCard";
 
 import { motion } from "framer-motion";
-import { getProjects } from "../api/projects";
+import { ProjectData, getProjects } from "../api/projects";
 
 import Link from "next/link";
 
 import ResumeComp from "@/components/ResumeComp";
 
-type Data = {
-  id: string;
-  name: string;
-  description: string;
-  imgUrl: string;
-  image: string;
-  route: string;
-  stack: string[];
-};
-
 interface Props {
-  data: Data[];
+  data: ProjectData[];
 }
 
 const PortfolioPage: React.FC<Props> = ({ data }) => {

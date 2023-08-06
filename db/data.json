@@ -18,12 +18,13 @@
       "nextUi",
       "NextAuth",
       "chatgpt"
-    ]
+    ],
+    "github": ""
   },
   {
     "id": "2",
     "name": "Viewflix",
-    "description": "I used Next.JS to build a stunning full-stack Netflix (clone) web application, which also used Magic for email authentication and Hasura for the database. Users of this app can watch a variety of videos and rate them favorably or negatively. Users can rewatch their favorite videos in their personal'my list' page because all content is personalized.",
+    "description": "I used Next.JS to build a stunning full-stack Netflix (clone) web application, which also used Magic for email authentication and Hasura for the database. Users of this app can watch a variety of videos and rate them favorably or negatively. Users can rewatch their favorite videos in their personal 'my list' page because all content is personalized.",
     "imgUrl": "https://",
     "image": "/viewflix.jpg",
     "route": "https://viewflix.vercel.app/",
@@ -37,12 +38,13 @@
       "serverless functions",
       "hasura",
       "GraphQL"
-    ]
+    ],
+    "github": "https://github.com/damaluku/viewflix"
   },
   {
     "id": "3",
     "name": "Dee coffee",
-    "description": "A coffee shop locator, this full-stack web application uses a geolocation API service to show you the closest coffee shops in a radius around you. [Please note: the database does not save your location data]",
+    "description": "A coffee shop locator, this full-stack web application uses a geolocation API service to show you a collection of the closest coffee shops within a specified radius around you. [Please note: the database does not save your location data]",
     "imgUrl": "https://",
     "image": "/dee-coffee.jpg",
     "route": "https://dee-coffee.vercel.app/",
@@ -54,7 +56,8 @@
       "github",
       "serverless functions",
       "Airtable"
-    ]
+    ],
+    "github": "https://github.com/damaluku/dee-coffee"
   },
   {
     "id": "4",
@@ -73,6 +76,7 @@
       "Mui",
       "NextJS",
       "sanity studios"
-    ]
+    ],
+    "github": ""
   }
 ]

@@ -15,19 +15,10 @@ import Link from "next/link";
 import Head from "next/head";
 
 import { useRouter } from "next/router";
-
-type Data = {
-  id: string;
-  name: string;
-  description: string;
-  imgUrl: string;
-  image: string;
-  route: string;
-  stack: string[];
-};
+import { ProjectData } from "../api/projects";
 
 interface Props {
-  data: Data;
+  data: ProjectData;
 }
 
 const Project: React.FC<Props> = ({ data }) => {
@@ -169,7 +160,7 @@ const Project: React.FC<Props> = ({ data }) => {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.3, delay: 1.5 }}
         >
-          <Box sx={{ marginTop: "4rem" }}>
+          <Stack marginTop="4rem" direction="row" spacing={8}>
             <Link
               href={data.route}
               target="_blank"
@@ -178,7 +169,20 @@ const Project: React.FC<Props> = ({ data }) => {
             >
               <Button variant="contained">View Live</Button>
             </Link>
-          </Box>
+
+            {data?.github.length > 0 && (
+              <Link
+                href={data.github}
+                target="_blank"
+                rel="noopener"
+                style={{ textDecoration: "none" }}
+              >
+                <Button variant="contained" focusRipple>
+                  View Repo
+                </Button>
+              </Link>
+            )}
+          </Stack>
         </motion.div>
       </Box>
     </>
