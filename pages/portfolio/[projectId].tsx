@@ -163,7 +163,7 @@ const Project: React.FC<Props> = ({ data }) => {
           exit={{ y: -10, opacity: 0 }}
           transition={{ duration: 0.3, delay: 1.5 }}
         >
-          {/*      <Stack marginTop="4rem" direction="row" spacing={8}>
+          <Stack marginTop="4rem" direction="row" spacing={8}>
             <Link
               href={data?.route}
               target="_blank"
@@ -174,16 +174,11 @@ const Project: React.FC<Props> = ({ data }) => {
             </Link>
 
             {data?.github.length > 0 && (
-              <Link
-                href={data?.github ? data?.github : ""}
-                target="_blank"
-                rel="noopener"
-                style={{ textDecoration: "none" }}
-              >
+              <Link href={data?.github} target="_blank" rel="noopener" passHref>
                 <Button variant="contained">View Repo</Button>
               </Link>
             )}
-          </Stack> */}
+          </Stack>
         </motion.div>
       </Box>
     </>
