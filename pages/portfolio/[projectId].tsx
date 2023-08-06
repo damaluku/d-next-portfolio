@@ -39,7 +39,9 @@ const Project: React.FC<Props> = ({ data }) => {
   return (
     <>
       <Head>
-        <title>Damian Aluku / Project - {projectId}</title>
+        <title>
+          Damian Aluku / Project - {data.name ? data.name : projectId}
+        </title>
       </Head>
 
       <Box
@@ -134,6 +136,7 @@ const Project: React.FC<Props> = ({ data }) => {
                     width="350"
                     height="400"
                     quality={100}
+                    priority
                   />
                 </Box>
               </motion.div>
@@ -148,7 +151,7 @@ const Project: React.FC<Props> = ({ data }) => {
               >
                 <Grid container gap={3}>
                   {data.stack.map((item, i) => (
-                    <Grid key={i} spacing={3}>
+                    <Grid key={i}>
                       <Button variant="contained" disabled>
                         {item}
                       </Button>

@@ -10,15 +10,27 @@ import { Box } from "@mui/system";
 
 import { useTheme } from "@mui/material/styles";
 
-import ServiceList from "@/components/ServiceList";
-import List from "@mui/material/List";
-
 import { motion } from "framer-motion";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import ResumeComp from "@/components/ResumeComp";
+
+import { AiFillHtml5 } from "react-icons/ai";
+import { FaCss3Alt } from "react-icons/fa";
+import { DiJavascript1 } from "react-icons/di";
+import { DiReact } from "react-icons/di";
+import { SiNextdotjs } from "react-icons/si";
+import { BiLogoVuejs } from "react-icons/bi";
+import { SiNuxtdotjs } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+import { SiStyledcomponents } from "react-icons/si";
+import { SiBootstrap } from "react-icons/si";
+import { SiMui } from "react-icons/si";
+import { GrGraphQl } from "react-icons/gr";
+import { SiHasura } from "react-icons/si";
+import NextUI from "@/components/NextUI";
 
 const AboutPage = () => {
   const theme = useTheme();
@@ -31,21 +43,91 @@ const AboutPage = () => {
     id: number;
     title: string;
     percentage: number | undefined;
+    icon: JSX.Element;
   };
 
+  const iconsSize: number = 45;
+
   const myStack: MyStack[] = [
-    { id: 1, title: "html", percentage: 98 },
-    { id: 2, title: "css", percentage: 96 },
-    { id: 3, title: "javaScript", percentage: 92 },
-    { id: 4, title: "ReactJs", percentage: 90 },
-    { id: 5, title: "NextJS", percentage: 92 },
-    { id: 6, title: "VueJs", percentage: 83 },
-    { id: 7, title: "NuxtJS", percentage: 83 },
-    { id: 8, title: "TypeScript", percentage: 85 },
-    { id: 9, title: "Styled-components", percentage: 92 },
-    { id: 10, title: "Bootstrap", percentage: 83 },
-    { id: 11, title: "MUI", percentage: 87 },
-    { id: 12, title: "NextUI", percentage: 88 },
+    {
+      id: 1,
+      title: "html",
+      percentage: 98,
+      icon: <AiFillHtml5 size={iconsSize} />,
+    },
+    {
+      id: 2,
+      title: "css",
+      percentage: 96,
+      icon: <FaCss3Alt size={iconsSize} />,
+    },
+    {
+      id: 3,
+      title: "javaScript",
+      percentage: 92,
+      icon: <DiJavascript1 size={iconsSize} />,
+    },
+    {
+      id: 4,
+      title: "ReactJs",
+      percentage: 90,
+      icon: <DiReact size={iconsSize} />,
+    },
+    {
+      id: 5,
+      title: "NextJS",
+      percentage: 92,
+      icon: <SiNextdotjs size={iconsSize} />,
+    },
+    {
+      id: 6,
+      title: "VueJs",
+      percentage: 83,
+      icon: <BiLogoVuejs size={iconsSize} />,
+    },
+    {
+      id: 7,
+      title: "NuxtJS",
+      percentage: 83,
+      icon: <SiNuxtdotjs size={iconsSize} />,
+    },
+    {
+      id: 8,
+      title: "TypeScript",
+      percentage: 85,
+      icon: <SiTypescript size={iconsSize} />,
+    },
+    {
+      id: 9,
+      title: "Styled-components",
+      percentage: 92,
+      icon: <SiStyledcomponents size={iconsSize} />,
+    },
+    {
+      id: 10,
+      title: "Bootstrap",
+      percentage: 83,
+      icon: <SiBootstrap size={iconsSize} />,
+    },
+    { id: 11, title: "MUI", percentage: 87, icon: <SiMui size={iconsSize} /> },
+    {
+      id: 12,
+      title: "NextUI",
+      percentage: 90,
+      icon: <NextUI size={iconsSize} />,
+    },
+    {
+      id: 13,
+      title: "Hasura",
+      percentage: 88,
+      icon: <SiHasura size={iconsSize} />,
+    },
+    {
+      id: 14,
+      title: "GraphQL",
+      percentage: 85,
+      icon: <GrGraphQl size={iconsSize} />,
+    },
   ];
 
   type MyServices = {
@@ -182,35 +264,49 @@ const AboutPage = () => {
           </Box>
         </Grid>
 
-        <Grid container gap={8} marginTop={5} justifyContent="center">
-          {myStack.map((item) => (
-            <Grid item xs={12} sm={6} key={item.id}>
-              <Stack
-                // direction="row"
-                alignItems="center"
-                justifyContent="space-between"
-                gap={1}
-                data-aos="fade-up"
-              >
-                <Typography sx={{ textTransform: "uppercase" }}>
-                  {item.title}
-                </Typography>
-                <Box width="100%">
-                  <LinearProgress
-                    variant="determinate"
-                    value={item.percentage}
-                  />
-                </Box>
-                <Typography sx={{ textTransform: "uppercase" }}>
-                  {item.percentage}%
-                </Typography>
-              </Stack>
-            </Grid>
-          ))}
-        </Grid>
+        <Box
+          sx={{
+            width: "100%",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            rowGap: "2rem",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "4rem",
+            gap: "2rem",
 
-        <Grid item xs={12}>
-          {/* <Stack
+            paddingBottom: {
+              xs: "2rem",
+              sm: "0",
+            },
+          }}
+        >
+          {myStack.map((item) => (
+            <Stack
+              key={item.id}
+              // direction="row"
+              alignItems="center"
+              justifyContent="space-between"
+              gap={1}
+              data-aos="fade-up"
+            >
+              <Typography sx={{ textTransform: "uppercase" }}>
+                {item.title}
+              </Typography>
+
+              <Box>{item.icon}</Box>
+              {/*   <Box width="100%">
+                <LinearProgress variant="determinate" value={item.percentage} />
+              </Box>
+              <Typography sx={{ textTransform: "uppercase" }}>
+                {item.percentage}%
+              </Typography> */}
+            </Stack>
+          ))}
+        </Box>
+
+        {/*    <Grid item xs={12}>
+          <Stack
             direction={{ xs: "column", md: "row" }}
             divider={<Divider orientation="vertical" flexItem />}
             spacing={5}
@@ -237,8 +333,8 @@ const AboutPage = () => {
                 ))}
               </List>
             </Box>
-          </Stack> */}
-        </Grid>
+          </Stack>
+        </Grid> */}
       </Grid>
 
       <Box>

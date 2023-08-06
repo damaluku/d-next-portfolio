@@ -163,7 +163,13 @@ export default function Home() {
             </a>
           </motion.span>
         </Box>
-        <Image src="/home-bg.jpg" alt="home image" fill priority />
+        <Image
+          src="/home-bg.jpg"
+          alt="home image"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
 
         <Box>
           <HomeParticles />

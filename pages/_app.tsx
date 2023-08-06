@@ -84,7 +84,8 @@ export default function MyApp(props: MyAppProps) {
     <>
       <Head>
         <title>
-          Damian Aluku {router.pathname == "/" ? "" : router.pathname}
+          Damian Aluku{" "}
+          {router.pathname == "/" ? "" : router.pathname.toString()}
         </title>
         <meta name="title" content="Damian Aluku" />
         <meta

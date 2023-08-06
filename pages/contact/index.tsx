@@ -4,6 +4,7 @@ import { Box } from "@mui/system";
 
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailOutlined from "@mui/icons-material/EmailOutlined";
 
 import { useTheme } from "@mui/material/styles";
 
@@ -24,15 +25,21 @@ const ContactPage = () => {
   const socials: Social[] = [
     {
       icon: <LinkedInIcon fontSize="large" color="primary" />,
-      name: "Copy",
+      name: "LinkedIn",
       route: "https://www.linkedin.com/in/damian-aluku-59b06023a",
       id: 1,
     },
     {
       icon: <GitHubIcon fontSize="large" color="primary" />,
-      name: "Save",
+      name: "GitHub",
       route: "https://github.com/damaluku",
       id: 2,
+    },
+    {
+      icon: <EmailOutlined fontSize="large" color="primary" />,
+      name: "Email",
+      route: "https://github.com/damaluku",
+      id: 3,
     },
   ];
 
@@ -89,13 +96,13 @@ const ContactPage = () => {
           },
         }}
       >
-        <Grid item xs={12}>
+        <Grid item>
           <Stack
             direction={{ xs: "column", md: "row" }}
             divider={<Divider orientation="vertical" flexItem />}
             spacing={5}
           >
-            <Stack sx={{ flex: "1" }} spacing={4}>
+            <Stack sx={{ flex: "2" }} spacing={4}>
               <motion.div
                 initial={{ x: 10, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -177,28 +184,39 @@ const ContactPage = () => {
                 </Typography>
               </motion.div>
             </Stack>
-            <Grid container sx={{ flex: "1" }} spacing={6}>
+
+            <Stack
+              gap={6}
+              flex="1"
+              justifyContent="space-evenly"
+              alignItems="center"
+              sx={{
+                flexDirection: {
+                  xs: "row",
+                  sm: "column",
+                },
+              }}
+            >
               {socials.map((item) => (
-                <Grid item xs={6} key={item.id}>
-                  <motion.div
-                    initial={{ y: 10, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -10, opacity: 0 }}
-                    transition={{ duration: 0.3, delay: 1.5 }}
+                <motion.div
+                  key={item.id}
+                  initial={{ y: 10, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -10, opacity: 0 }}
+                  transition={{ duration: 0.3, delay: 1.5 }}
+                >
+                  <Link
+                    href={item.route}
+                    style={{ textDecoration: "none" }}
+                    passHref
+                    target="_blank"
+                    rel="noopener"
                   >
-                    <Link
-                      href={item.route}
-                      style={{ textDecoration: "none" }}
-                      passHref
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      {item.icon}
-                    </Link>
-                  </motion.div>
-                </Grid>
+                    {item.icon}
+                  </Link>
+                </motion.div>
               ))}
-            </Grid>
+            </Stack>
           </Stack>
         </Grid>
       </Grid>

@@ -1,0 +1,78 @@
+[
+  {
+    "id": "1",
+    "name": "Q-Base",
+    "description": "I created the library website called Q-Base to help developers identify tools to increase development quality and speed. In order to get inspiration for creating a nice user interface, I visited several sorts of websites in the same business as well as online communities like Dribbble. I also added an AI search feature using ChatGPT to make the user experience more enjoyable.",
+    "imgUrl": "https://",
+    "image": "/q-base.jpg",
+    "route": "https://quick-base.netlify.app/",
+    "stack": [
+      "html",
+      "css",
+      "js",
+      "ts",
+      "git",
+      "github",
+      "NextJS",
+      "Redux Toolkit",
+      "nextUi",
+      "NextAuth",
+      "chatgpt"
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Viewflix",
+    "description": "I used Next.JS to build a stunning full-stack Netflix (clone) web application, which also used Magic for email authentication and Hasura for the database. Users of this app can watch a variety of videos and rate them favorably or negatively. Users can rewatch their favorite videos in their personal'my list' page because all content is personalized.",
+    "imgUrl": "https://",
+    "image": "/viewflix.jpg",
+    "route": "https://viewflix.vercel.app/",
+    "stack": [
+      "NextJS",
+      "ReactJS",
+      "ts",
+      "module css styling",
+      "github",
+      "magic",
+      "serverless functions",
+      "hasura",
+      "GraphQL"
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Dee coffee",
+    "description": "A coffee shop locator, this full-stack web application uses a geolocation API service to show you the closest coffee shops in a radius around you. [Please note: the database does not save your location data]",
+    "imgUrl": "https://",
+    "image": "/dee-coffee.jpg",
+    "route": "https://dee-coffee.vercel.app/",
+    "stack": [
+      "NextJS",
+      "ReactJS",
+      "ts",
+      "module css styling",
+      "github",
+      "serverless functions",
+      "Airtable"
+    ]
+  },
+  {
+    "id": "4",
+    "name": "DEE BLOG",
+    "description": "I created the multipage blog site Dee Blog with an enjoyable user experience in mind. I got inspiration for creating a nice user interface by browsing many types of websites within the same business, including websites like awwwards.",
+    "imgUrl": "https://",
+    "image": "/dee-blog.jpg",
+    "route": "https://dee-blog.vercel.app",
+    "stack": [
+      "html",
+      "css",
+      "js",
+      "ts",
+      "git",
+      "github",
+      "Mui",
+      "NextJS",
+      "sanity studios"
+    ]
+  }
+]
