@@ -221,23 +221,16 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 export const getStaticPaths = async (context: any) => {
   const data = await getProjects();
 
-  if (data && data.length > 0) {
-    const paths = data?.map((project) => {
-      return {
-        params: {
-          projectId: `${project?.id.toString()}`,
-        },
-      };
-    });
+  const paths = data?.map((project) => {
+    return {
+      params: {
+        projectId: `${project?.id.toString()}`,
+      },
+    };
+  });
 
-    return {
-      paths,
-      fallback: true,
-    };
-  } else {
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
+  return {
+    paths,
+    fallback: true,
+  };
 };

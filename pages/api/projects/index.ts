@@ -13,7 +13,7 @@ export type ProjectData = {
   github: string;
 };
 
-export function getProjects() {
+export async function getProjects() {
   return data;
 }
 
