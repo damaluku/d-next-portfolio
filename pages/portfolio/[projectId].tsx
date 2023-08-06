@@ -144,7 +144,7 @@ const Project: React.FC<Props> = ({ data }) => {
                 transition={{ duration: 0.3, delay: 1.2 }}
               >
                 <Grid container gap={3}>
-                  {data.stack.map((item, i) => (
+                  {data?.stack.map((item, i) => (
                     <Grid key={i}>
                       <Button variant="contained" disabled>
                         {item}
