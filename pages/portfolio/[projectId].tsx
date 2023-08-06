@@ -164,15 +164,14 @@ const Project: React.FC<Props> = ({ data }) => {
           transition={{ duration: 0.3, delay: 1.5 }}
         >
           <Stack marginTop="4rem" direction="row" spacing={8}>
-            <Link
+            <a
               href={data?.route}
               target="_blank"
               rel="noopener"
               style={{ textDecoration: "none" }}
-              passHref
             >
               <Button variant="contained">View Live</Button>
-            </Link>
+            </a>
 
             {data?.github.length > 0 && (
               <a href={data?.github} target="_blank" rel="noopener">
