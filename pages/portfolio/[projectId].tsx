@@ -175,14 +175,12 @@ const Project: React.FC<Props> = ({ data }) => {
 
             {data?.github.length > 0 && (
               <Link
-                href={data?.github}
+                href={data?.github ? data?.github : ""}
                 target="_blank"
                 rel="noopener"
                 style={{ textDecoration: "none" }}
               >
-                <Button variant="contained" focusRipple>
-                  View Repo
-                </Button>
+                <Button variant="contained">View Repo</Button>
               </Link>
             )}
           </Stack>
