@@ -97,7 +97,7 @@ const Project: React.FC<Props> = ({ data }) => {
               }}
               lineHeight={2}
             >
-              {data.description}
+              {data?.description}
             </Typography>
           </motion.div>
 
