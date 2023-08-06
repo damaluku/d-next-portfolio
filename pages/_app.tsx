@@ -25,6 +25,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
+import { Cormorant_Garamond } from "next/font/google";
+
+const CormorantGaramond = Cormorant_Garamond({
+  style: "normal",
+  weight: "700",
+  subsets: ["latin", "cyrillic", "cyrillic-ext", "latin-ext", "vietnamese"],
+  preload: true,
+});
+
 // import ClearLayout from "../layouts/ClearLayout";
 
 const clientSideEmotionCache = createEmotionCache();
@@ -99,6 +108,10 @@ export default function MyApp(props: MyAppProps) {
         <meta name="robots" content="index, follow" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
+        {/*   <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        /> */}
       </Head>
       <CacheProvider value={emotionCache}>
         <ThemeProvider theme={selectedTheme}>
@@ -125,6 +138,7 @@ export default function MyApp(props: MyAppProps) {
                   clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
                 },
               }}
+              className={CormorantGaramond.className}
             >
               <BaseLayout mode={mode} setMode={setMode}>
                 <Component {...pageProps} />

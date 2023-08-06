@@ -15,7 +15,8 @@ import Link from "next/link";
 import Head from "next/head";
 
 import { useRouter } from "next/router";
-import { ProjectData } from "../api/projects";
+import { ProjectData, getProjects } from "../api/projects";
+import { GetStaticProps } from "next";
 
 interface Props {
   data: ProjectData;
@@ -191,7 +192,7 @@ const Project: React.FC<Props> = ({ data }) => {
 
 export default Project;
 
-export const getServerSideProps = async (context: any) => {
+/* export const getServerSideProps = async (context: any) => {
   const { params } = context;
   const { projectId } = params;
 
@@ -202,4 +203,41 @@ export const getServerSideProps = async (context: any) => {
       data,
     },
   };
+}; */
+
+export const getStaticProps: GetStaticProps = async (context: any) => {
+  const { params } = context;
+  const { projectId } = params;
+
+  const data = await getProjectById(projectId);
+
+  return {
+    props: {
+      data: data ? data : {},
+    },
+  };
+};
+
+export const getStaticPaths = async (context: any) => {
+  const data = await getProjects();
+
+  if (data && data.length > 0) {
+    const paths = data?.map((project) => {
+      return {
+        params: {
+          projectId: `${project?.id.toString()}`,
+        },
+      };
+    });
+
+    return {
+      paths,
+      fallback: true,
+    };
+  } else {
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 };

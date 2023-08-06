@@ -43,7 +43,13 @@ const ProfileCard = ({ project }: Props) => {
           },
         }}
       >
-        <Image src={project.image} alt={project.name} fill priority />
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </CardContent>
       <CardContent>
         <Typography

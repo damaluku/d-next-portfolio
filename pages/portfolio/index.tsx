@@ -11,6 +11,7 @@ import { ProjectData, getProjects } from "../api/projects";
 import Link from "next/link";
 
 import ResumeComp from "@/components/ResumeComp";
+import { GetStaticProps } from "next";
 
 interface Props {
   data: ProjectData[];
@@ -123,7 +124,7 @@ const PortfolioPage: React.FC<Props> = ({ data }) => {
 
 export default PortfolioPage;
 
-export async function getStaticProps() {
+/* export async function getStaticProps() {
   const data = await getProjects();
 
   return {
@@ -132,3 +133,20 @@ export async function getStaticProps() {
     },
   };
 }
+ */
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const data = await getProjects();
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      data: data ? data : [],
+    },
+  };
+};
