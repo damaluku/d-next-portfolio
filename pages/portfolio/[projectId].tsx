@@ -28,11 +28,13 @@ const Project: React.FC<Props> = ({ data }) => {
 
   const { projectId } = router.query;
 
+  // console.log(data);
+
   return (
     <>
       <Head>
         <title>
-          Damian Aluku / Project - {data.name ? data.name : projectId}
+          Damian Aluku / Project - {data?.name ? data?.name : projectId}
         </title>
       </Head>
 
@@ -63,7 +65,7 @@ const Project: React.FC<Props> = ({ data }) => {
               textTransform: "uppercase",
             }}
           >
-            {data.name}
+            {data?.name}
           </Typography>
         </motion.div>
 
@@ -123,8 +125,8 @@ const Project: React.FC<Props> = ({ data }) => {
               >
                 <Box justifyContent="center" alignItems="center">
                   <Image
-                    src={data.image}
-                    alt={data.name}
+                    src={data?.image}
+                    alt={data?.name}
                     width="350"
                     height="400"
                     quality={100}
@@ -163,7 +165,7 @@ const Project: React.FC<Props> = ({ data }) => {
         >
           <Stack marginTop="4rem" direction="row" spacing={8}>
             <Link
-              href={data.route}
+              href={data?.route}
               target="_blank"
               rel="noopener"
               style={{ textDecoration: "none" }}
@@ -173,7 +175,7 @@ const Project: React.FC<Props> = ({ data }) => {
 
             {data?.github.length > 0 && (
               <Link
-                href={data.github}
+                href={data?.github}
                 target="_blank"
                 rel="noopener"
                 style={{ textDecoration: "none" }}
@@ -224,7 +226,7 @@ export const getStaticPaths = async (context: any) => {
   const paths = data?.map((project) => {
     return {
       params: {
-        projectId: `${project?.id.toString()}`,
+        projectId: project?.id.toString(),
       },
     };
   });
