@@ -194,7 +194,7 @@ const Project: React.FC<Props> = ({ data }) => {
 
 export default Project;
 
-/* export const getServerSideProps = async (context: any) => {
+export const getServerSideProps = async (context: any) => {
   const { params } = context;
   const { projectId } = params;
 
@@ -205,8 +205,8 @@ export default Project;
       data,
     },
   };
-}; */
-
+};
+/* 
 export const getStaticProps: GetStaticProps = async (context: any) => {
   const { params } = context;
   const { projectId } = params;
@@ -220,7 +220,7 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
   };
 };
 
-export const getStaticPaths = async (context: any) => {
+export const getStaticPaths = async () => {
   const data = await getProjects();
 
   const paths = data?.map((project) => {
@@ -231,8 +231,10 @@ export const getStaticPaths = async (context: any) => {
     };
   });
 
+  console.log(paths);
   return {
     paths,
     fallback: true,
   };
 };
+ */
