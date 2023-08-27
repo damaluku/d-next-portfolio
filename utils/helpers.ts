@@ -1,4 +1,4 @@
-export const handleDownload = () => {
+export const handleDownloadResume = () => {
   fetch("MyResume.pdf").then((res) => {
     res.blob().then((blob) => {
       const fileURL = window.URL.createObjectURL(blob);

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, Tooltip } from "@mui/material";
 
-import { handleDownload } from "@/utils/helpers";
+import { handleDownloadResume } from "@/utils/helpers";
 
 import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 
@@ -12,7 +12,7 @@ const ResumeComp = () => {
       <Button
         variant="contained"
         startIcon={<DownloadForOfflineIcon />}
-        onClick={handleDownload}
+        onClick={handleDownloadResume}
         sx={{
           position: "absolute",
           right: "1.5rem",
