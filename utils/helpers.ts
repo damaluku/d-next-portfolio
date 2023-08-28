@@ -1,11 +1,11 @@
 export const handleDownloadResume = () => {
-  fetch("MyResume.pdf").then((res) => {
+  fetch("resumeFile.pdf").then((res) => {
     res.blob().then((blob) => {
       const fileURL = window.URL.createObjectURL(blob);
 
       let alink = document.createElement("a");
       alink.href = fileURL;
-      alink.download = "MyResume.pdf";
+      alink.download = "resumeFile.pdf";
       alink.click();
     });
   });
