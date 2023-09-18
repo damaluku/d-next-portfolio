@@ -80,7 +80,7 @@ export default function Home() {
               }}
               lineHeight={2}
             >
-              I&apos;m a front-end developer based in Nigeria with a passion for
+              I&apos;m a front-end developer based in Canada with a passion for
               building beautiful websites and web applications. My style is more
               minimalist, efficient, and focused on achieving high quality
               projects.
