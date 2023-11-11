@@ -158,7 +158,7 @@ const ContactPage = () => {
                     },
                   }}
                 >
-                  Tel : <a href="tel:+2348184094047">+2348184094047</a>
+                  Tel : <a href="tel:+13068507138">+13068507138</a>
                 </Typography>
               </motion.div>
 
