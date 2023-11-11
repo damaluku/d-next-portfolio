@@ -30,6 +30,7 @@ import { SiBootstrap } from "react-icons/si";
 import { SiMui } from "react-icons/si";
 import { GrGraphQl } from "react-icons/gr";
 import { SiHasura } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 import NextUI from "@/components/NextUI";
 
 const AboutPage = () => {
@@ -69,61 +70,72 @@ const AboutPage = () => {
     },
     {
       id: 4,
+      title: "Java",
+      percentage: 85,
+      icon: <FaJava size={iconsSize} />,
+    },
+    {
+      id: 5,
       title: "ReactJs",
       percentage: 90,
       icon: <DiReact size={iconsSize} />,
     },
     {
-      id: 5,
+      id: 6,
       title: "NextJS",
       percentage: 92,
       icon: <SiNextdotjs size={iconsSize} />,
     },
     {
-      id: 6,
+      id: 7,
       title: "VueJs",
       percentage: 83,
       icon: <BiLogoVuejs size={iconsSize} />,
     },
     {
-      id: 7,
+      id: 8,
       title: "NuxtJS",
       percentage: 83,
       icon: <SiNuxtdotjs size={iconsSize} />,
     },
     {
-      id: 8,
+      id: 9,
       title: "TypeScript",
       percentage: 85,
       icon: <SiTypescript size={iconsSize} />,
     },
     {
-      id: 9,
+      id: 10,
       title: "Styled-components",
       percentage: 92,
       icon: <SiStyledcomponents size={iconsSize} />,
     },
     {
-      id: 10,
+      id: 11,
       title: "Bootstrap",
       percentage: 83,
       icon: <SiBootstrap size={iconsSize} />,
     },
-    { id: 11, title: "MUI", percentage: 87, icon: <SiMui size={iconsSize} /> },
     {
       id: 12,
+      title: "MUI",
+      percentage: 87,
+      icon: <SiMui size={iconsSize} />,
+    },
+    {
+      id: 13,
       title: "NextUI",
       percentage: 90,
       icon: <NextUI size={iconsSize} />,
     },
     {
-      id: 13,
+      id: 14,
       title: "Hasura",
       percentage: 88,
       icon: <SiHasura size={iconsSize} />,
     },
     {
-      id: 14,
+      id: 15,
       title: "GraphQL",
       percentage: 85,
       icon: <GrGraphQl size={iconsSize} />,
