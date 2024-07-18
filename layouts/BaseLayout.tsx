@@ -50,6 +50,7 @@ const MainContainer = styled.main({
   minHeight: "100Vh",
   display: "grid",
   gridTemplateColumns: "repeat(9, 1fr)",
+  // background: "linear-gradient(135deg, #0d1b2a, #1b263b, #415a77)",
 
   header: {
     width: "100%",

@@ -78,10 +78,12 @@ const NavBar = ({ mode, setMode }: Props) => {
               <Typography
                 variant="h3"
                 component="h3"
-                sx={{ textTransform: "uppercase" }}
-                color={router.route === "/" ? "white" : "primary"}
+                color={myTheme.palette.text.primary}
+                textTransform="uppercase"
+                letterSpacing={5}
+                fontWeight="bolder"
               >
-                D.A
+                Damian
               </Typography>
             </Link>
           </Box>
@@ -232,6 +234,10 @@ const MyNav = styled.nav({
   justifyContent: "space-between",
   alignItems: "center",
   padding: "1rem",
+  backdropFilter: "blur(10px)",
+  background: "rgba(255, 255, 255, 0.1)",
+  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+  borderRadius: "10px",
 });
 
 const ActionBox = styled(Box)({

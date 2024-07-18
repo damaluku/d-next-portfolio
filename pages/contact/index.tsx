@@ -38,7 +38,7 @@ const ContactPage = () => {
     {
       icon: <EmailOutlined fontSize="large" color="primary" />,
       name: "Email",
-      route: "https://github.com/damaluku",
+      route: "",
       id: 3,
     },
   ];
@@ -140,25 +140,6 @@ const ContactPage = () => {
                 >
                   Email :{" "}
                   <a href="mailto:damaluku@gmail.com">damaluku@gmail.com</a>
-                </Typography>
-              </motion.div>
-
-              <motion.div
-                initial={{ x: 10, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -10, opacity: 0 }}
-                transition={{ duration: 0.3, delay: 0.9 }}
-              >
-                <Typography
-                  sx={{
-                    textTransform: "capitalize",
-                    a: {
-                      color: theme.palette.primary.main,
-                      textDecoration: "none",
-                    },
-                  }}
-                >
-                  Tel : <a href="tel:+13068507138">+13068507138</a>
                 </Typography>
               </motion.div>
 

@@ -22,9 +22,9 @@ export default function Home() {
           xs: "column-reverse",
           sm: "row",
         },
-        "@media (orientation: landscape)": {
-          margin: "6rem 0",
-        },
+        // "@media (orientation: landscape)": {
+        //   margin: "6rem 0",
+        // },
       }}
     >
       <Box

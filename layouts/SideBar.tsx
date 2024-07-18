@@ -6,11 +6,58 @@ import styled from "@emotion/styled";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import Link from "next/link";
 
+type Social = {
+  icon: JSX.Element;
+  id: number;
+  name: string;
+  route: string;
+};
+
 const SideBar = () => {
   const theme = useTheme();
+
+  const socials: Social[] = [
+    {
+      icon: (
+        <LinkedInIcon
+          fontSize="large"
+          color="primary"
+          sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
+        />
+      ),
+      name: "LinkedIn",
+      route: "https://www.linkedin.com/in/damian-aluku-59b06023a",
+      id: 1,
+    },
+    {
+      icon: (
+        <GitHubIcon
+          fontSize="large"
+          color="primary"
+          sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
+        />
+      ),
+      name: "GitHub",
+      route: "https://github.com/damaluku",
+      id: 2,
+    },
+    {
+      icon: (
+        <BusinessCenterIcon
+          fontSize="large"
+          color="primary"
+          sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
+        />
+      ),
+      name: "Portfolio",
+      route: "/portfolio",
+      id: 3,
+    },
+  ];
 
   return (
     <Container>
@@ -34,25 +81,19 @@ const SideBar = () => {
               borderRadius: "9px 0px 9px 0px",
             }}
           />
-          <Tooltip title="Linkedin" placement="right">
-            <Link
-              href="https://www.linkedin.com/in/damian-aluku-59b06023a"
-              target="_blank"
-              rel="noopener"
-              passHref
-            >
-              <LinkedInIcon
-                sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
-              />
-            </Link>
-          </Tooltip>
-          <Tooltip title="Portfolio" placement="right">
-            <Link href="/portfolio" passHref>
-              <BusinessCenterIcon
-                sx={{ fontSize: "2rem", color: theme.palette.primary.main }}
-              />
-            </Link>
-          </Tooltip>
+
+          {socials.map((social) => (
+            <Tooltip key={social.id} title={social.name} placement="right">
+              <Link
+                href={social.route}
+                target={social.route != "/portfolio" ? "_blank" : ""}
+                rel="noopener"
+                passHref
+              >
+                {social.icon}
+              </Link>
+            </Tooltip>
+          ))}
 
           <Box
             sx={{
