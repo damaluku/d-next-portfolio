@@ -22,6 +22,7 @@ const BaseLayout: React.FC<Props> = ({ children, mode, setMode }) => {
       >
         <MainContainer>
           <NavBar mode={mode} setMode={setMode} />
+
           <Box
             className="children-container"
             sx={{
